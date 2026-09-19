@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavone Menu</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Google Fonts για πιο premium αίσθηση -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fafafa;
+            --primary-dark: #2c3e50;
+            --coffee-color: #f6e6d9;
+            /* Το Peach/Beige του χαρτιού */
+            --food-color: #79c5b4;
+            /* Το Mint/Teal της Elegoo/Κάρτας */
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--primary-dark);
+            padding-bottom: 50px;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .header {
+            text-align: center;
+            padding: 25px 0 15px 0;
+            background-color: var(--card-bg);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .nav-categories {
+            position: sticky;
+            top: 0;
+            background: var(--card-bg);
+            padding: 15px 20px;
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+            /* Κρύβουμε τη μπάρα κύλισης */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .nav-categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn {
+            background-color: var(--coffee-color);
+            color: var(--primary-dark);
+            border: none;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Το δεύτερο κουμπί έχει το πράσινο χρώμα */
+        .category-btn.food-btn {
+            background-color: var(--food-color);
+            color: white;
+        }
+
+        /* --- MENU LAYOUT (GRID) --- */
+        .menu-container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 22px;
+            margin: 40px 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- PRODUCT CARDS (Οι κάρτες με τις εικόνες) --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* 1 στήλη στα κινητά */
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ο χώρος για τη φωτογραφία */
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+            padding-right: 15px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--food-color);
+            /* Πράσινο χρώμα στην τιμή */
+            white-space: nowrap;
+        }
+
+        .product-desc {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* --- COMPACT LIST (Για καφέδες/αναψυκτικά χωρίς φωτό) --- */
+        .compact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .compact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+    </style>
+</head>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<body>
+
+    <div class="header">
+        <h1>PAVONE</h1>
+    </div>
+
+    <!-- Τα κουμπιά πλοήγησης -->
+    <div class="nav-categories">
+        <button class="category-btn" onclick="scrollToSection('coffee')">COFFEE</button>
+        <button class="category-btn food-btn" onclick="scrollToSection('food')">BRUNCH & FOOD</button>
+        <button class="category-btn" onclick="scrollToSection('cocktails')">COCKTAILS</button>
+    </div>
+
+    <div class="menu-container">
+
+        <!-- SECTION 1: FOOD (Με εικόνες) -->
+        <h2 id="food" class="section-title">Brunch & Food</h2>
+
+        <div class="product-grid">
+            <!-- Κάρτα Πιάτου 1 -->
+            <div class="product-card">
+                <!-- Εδώ μπαίνει η φωτό του φωτογράφου -->
+                <img class="product-image"
+                    src="https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&w=600&auto=format&fit=crop"
+                    alt="Pancakes">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Pancakes με Σοκολάτα</h3>
+                        <span class="product-price">7.50€</span>
+                    </div>
+                    <p class="product-desc">Αφράτα pancakes με πραλίνα φουντουκιού, τριμμένο μπισκότο και φρέσκες
+                        φράουλες.</p>
+                </div>
+            </div>
+
+            <!-- Κάρτα Πιάτου 2 -->
+            <div class="product-card">
+                <img class="product-image"
+                    src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop"
+                    alt="Benedict">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Αυγά Benedict</h3>
+                        <span class="product-price">9.00€</span>
+                    </div>
+                    <p class="product-desc">Δύο αυγά ποσέ πάνω σε φρυγανισμένο ψωμί, με καπνιστό σολομό και σάλτσα
+                        hollandaise.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: COFFEE (Συμπαγής Λίστα χωρίς εικόνες) -->
+        <h2 id="coffee" class="section-title" style="margin-top: 60px;">Coffee Menu</h2>
+
+        <div class="compact-list">
+            <div class="compact-item">
+                <div>
+                    <div class="product-title">Espresso</div>
+                    <div class="product-desc">Single / Double</div>
+                </div>
+                <div class="product-price" style="color:var(--primary-dark);">3.0 / 3.8€</div>
+            </div>
+
+            <div class="compact-item">
+                <div>
+                    <div class="product-title">Freddo Espresso</div>
+                    <div class="product-desc">Take away: 2.0€</div>
+                </div>
+                <div class="product-price" style="color:var(--primary-dark);">3.8€</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Απλό Script για το Smooth Scrolling -->
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            // Αφαιρούμε 80px από την κορυφή για να μην κρύβεται ο τίτλος κάτω από το sticky menu
+            const y = element.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
