@@ -98,7 +98,16 @@
       "description": "Aperol, prosecco, grapefruit soda"
     }
   ],
-  "classic": [],
+  "classic": [
+    {
+      "title": "DAIQUIRI/MARGARITA/CAIPIRINHA/MOHITO/OLD FASHIONED/PORNSTAR",
+      "price": "10"
+    },
+    {
+      "title": "PALOMA/NEGRONI",
+      "price": "11"
+    }
+  ],
   "signature": [
     {
       "title": "BLOOM",
@@ -110,5 +119,20 @@
       "price": "11",
       "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg"
     }
-  ]
+  ],
+  "spirits": [
+    {
+      "title": "SIMPLE",
+      "price": "9"
+    },
+    {
+      "title": "SPECIAL",
+      "price": "11"
+    },
+    {
+      "title": "PREMIUM",
+      "price": "14"
+    }
+  ],
+  "wines": []
 }
