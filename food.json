@@ -4,6 +4,62 @@
       "title": "SMOOTHIE BOWL",
       "price": "9",
       "description": "με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής (with almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits)"
+    },
+    {
+      "title": "CHIA BOWL",
+      "price": "8",
+      "description": "με γιαούρτι, φρούτα εποχής, αμύγδαλα, ινδοκάρυδο και σπόρους chia (with yogurt, seasonal fruits, almonds, shredded coconut and chia seeds)"
+    },
+    {
+      "title": "CHOCO PEANUT CRUNCH",
+      "price": "8.5",
+      "description": "Ελληνικό γιαούρτι, τραγανή γκρανόλα, μπανάνα, φυστικοβούτυρο, μέλι και κανέλα (Greek yogurt, granola, banana, peanut butter, honey and drops of chocolate)"
+    },
+    {
+      "title": "RED BERRY BOWL",
+      "price": "8.5",
+      "description": "γιαούρτι, γκρανόλα με κόκκινα φρούτα, φράουλες και μέλι (yogurt with red berries granola, starwberry and honey)"
+    }
+  ],
+  "eggs": [
+    {
+      "title": "PULLED PORK BRIOCHE",
+      "price": "13",
+      "description": "με αυγό ποσέ, hollandaise και τργανό κρεμμύδι (Pulled pork brioche with poached egg, hollandaise and crispy onion"
+    },
+    {
+      "title": "BREAKFAST TACOS",
+      "price": "10",
+      "description": "με αυγά scrambled, ντοματίνια, αβοκάντο και καπνιστό σολομό (breakfast tacos with scrambled eggs, cherry tomatoes, avocado and smoked salmon)"
+    },
+    {
+      "title": "SCRAMBLED EGGS",
+      "price": "10",
+      "description": "σε μπριός, chutney πιπεριάς φλωρίνης, απάκι κοτόπουλο και τραγανό κρεμμύδι (scrambled eggs on top of brioche with sweet red pepper chutney and smoked chicken"
+    }
+  ],
+  "savory": [
+    {
+      "title": "CLUB SANDWICH",
+      "price": "12",
+      "description": "με παναρισμένο κοτόπουλο, ντομάτα, μπέικον, iceberg και μαγιονέζα (Fried chicken club sandwich with tomato, bacon, iceberg and mayonaise)"
+    },
+    {
+      "title": "ΜΠΡΟΥΣΚΕΤΑ",
+      "price": "9",
+      "description": "με χούμους, μανιτάρια, ρόκα, τραγανό κρεμμύδι και dukkah (bruschetta with sun-dried tomato hummus, mushrooms, crispy onion and dukkah)"
+    }
+  ],
+  "sweet": [
+    {
+      "title": "PANCAKES",
+      "price": "9",
+      "description": "με πραλίνα φουντουκού, crumble αμυγδάλου και marshmallows (pancakes with hazelnut praline, almond crumble and marschmallows"
+    },
+    {
+      "title": "ΑΥΓΟΦΕΤΕΣ ΤΣΟΥΡΕΚΙΟΥ",
+      "price": "10",
+      "description": "με ζάχαρη, κανέλα, πραλίνα καραμέλας, κρόκαν και παγωτό βανίλια (Tsoureki French  toast with cinnamon sugar, caramel praline, almond brittle and vanilla ice cream)"
     }
   ]
 }
