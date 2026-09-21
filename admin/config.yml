@@ -6,23 +6,26 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "food"
-    label: "Brunch & Food"
-    folder: "_food"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Όνομα Πιάτου", name: "title", widget: "string"}
-      - {label: "Τιμή", name: "price", widget: "string", hint: "π.χ. 7.50"}
-      - {label: "Περιγραφή", name: "description", widget: "text", required: false}
-      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-
-  - name: "coffee"
-    label: "Coffee Menu"
-    folder: "_coffee"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Όνομα", name: "title", widget: "string"}
-      - {label: "Τιμή", name: "price", widget: "string"}
-      - {label: "Λεπτομέρεια", name: "description", widget: "string", required: false, hint: "π.χ. Single/Double"}
+  - name: "menu"
+    label: "Διαχείριση Καταλόγου"
+    files:
+      - label: "Όλο το Μενού (Πιάτα & Καφέδες)"
+        name: "menu_data"
+        file: "menu.json"
+        fields:
+          - label: "Φαγητό & Brunch"
+            name: "food"
+            widget: "list"
+            fields:
+              - {label: "Όνομα Πιάτου", name: "title", widget: "string"}
+              - {label: "Τιμή", name: "price", widget: "string", hint: "π.χ. 7.50"}
+              - {label: "Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+              
+          - label: "Καφέδες"
+            name: "coffee"
+            widget: "list"
+            fields:
+              - {label: "Όνομα Καφέ", name: "title", widget: "string"}
+              - {label: "Τιμή", name: "price", widget: "string", hint: "π.χ. 3.0 / 3.8"}
+              - {label: "Λεπτομέρεια (π.χ. Single/Double)", name: "description", widget: "string", required: false}
