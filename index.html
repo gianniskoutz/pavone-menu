@@ -99,11 +99,27 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Νέο στυλ για τους τίτλους των κατηγοριών (π.χ. SIGNATURE COCKTAILS) */
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--primary);
+            margin: 35px 0 15px 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+        .category-title:first-child {
+            margin-top: 5px;
+        }
+
         .menu-card {
             background: var(--card-bg);
             border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.04);
             border: 1px solid rgba(0,0,0,0.02);
         }
@@ -125,7 +141,7 @@
         .menu-card-header h3 {
             margin: 0;
             font-family: 'Playfair Display', serif;
-            font-size: 22px;
+            font-size: 20px;
             color: var(--text-main);
             flex: 1;
             padding-right: 15px;
@@ -133,7 +149,7 @@
         }
         .menu-card-header strong {
             color: var(--primary);
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
         }
         .product-desc {
@@ -185,87 +201,99 @@
         <p>Premium Quality Menu</p>
     </div>
 
-    <!-- Η σειρά των Tabs άλλαξε. Ο Καφές είναι πλέον το πρώτο και ενεργό (active) κουμπί. -->
     <div class="nav-tabs">
-        <button class="active" onclick="switchTab('coffee')">COFFEE MENU</button>
-        <button onclick="switchTab('food')">BRUNCH & FOOD</button>
+        <button class="active" onclick="switchTab('coffee')">DRINKS & COFFEE</button>
+        <button onclick="switchTab('food')">BRUNCH MENU</button>
     </div>
 
     <div class="menu-container">
-        
-        <!-- Section Καφέδων (Πλέον μπήκε πρώτο και πήρε την κλάση active) -->
+        <!-- DRINKS SECTION -->
         <div id="section-coffee" class="menu-section active">
-            <div id="coffee-list" class="compact-list"></div>
+            <div id="drinks-container" class="compact-list"></div>
         </div>
 
-        <!-- Section Φαγητού -->
+        <!-- FOOD SECTION -->
         <div id="section-food" class="menu-section">
-            <div id="food-list"></div>
+            <div id="food-container"></div>
         </div>
-
     </div>
 
     <script>
         function switchTab(tabName) {
-            document.querySelectorAll('.menu-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.nav-tabs button').forEach(button => {
-                button.classList.remove('active');
-            });
+            document.querySelectorAll('.menu-section').forEach(section => section.classList.remove('active'));
+            document.querySelectorAll('.nav-tabs button').forEach(button => button.classList.remove('active'));
             document.getElementById('section-' + tabName).classList.add('active');
             event.target.classList.add('active');
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        async function fetchMenuData() {
-            try {
-                const response = await fetch('/menu.json');
-                if (!response.ok) {
-                    document.getElementById('coffee-list').innerHTML = "<p style='text-align:center; padding: 40px;'>Το μενού ετοιμάζεται...</p>";
-                    return;
-                }
+        // Helper για γρήγορη δημιουργία κατηγοριών Ροφημάτων
+        function renderDrinksCategory(container, title, items) {
+            if (!items || items.length === 0) return;
+            container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            items.forEach(item => {
+                container.innerHTML += `
+                    <div class="compact-item">
+                        <div>
+                            <h4>${item.title}</h4>
+                            ${item.description ? `<p>${item.description}</p>` : ''}
+                        </div>
+                        <strong>${item.price} €</strong>
+                    </div>
+                `;
+            });
+        }
 
-                const data = await response.json();
-                
-                const coffeeContainer = document.getElementById('coffee-list');
-                if (data.coffee && data.coffee.length > 0) {
-                    coffeeContainer.innerHTML = '';
-                    data.coffee.forEach(item => {
-                        coffeeContainer.innerHTML += `
-                            <div class="compact-item">
-                                <div>
-                                    <h4>${item.title}</h4>
-                                    ${item.description ? `<p>${item.description}</p>` : ''}
-                                </div>
+        // Helper για γρήγορη δημιουργία κατηγοριών Φαγητού
+        function renderFoodCategory(container, title, items) {
+            if (!items || items.length === 0) return;
+            container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            items.forEach(item => {
+                container.innerHTML += `
+                    <div class="menu-card">
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>${item.title}</h3>
                                 <strong>${item.price} €</strong>
                             </div>
-                        `;
-                    });
-                }
+                            ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        }
 
-                const foodContainer = document.getElementById('food-list');
-                if (data.food && data.food.length > 0) {
-                    foodContainer.innerHTML = ''; 
-                    data.food.forEach(item => {
-                        foodContainer.innerHTML += `
-                            <div class="menu-card">
-                                ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
-                                <div class="menu-card-content">
-                                    <div class="menu-card-header">
-                                        <h3>${item.title}</h3>
-                                        <strong>${item.price} €</strong>
-                                    </div>
-                                    ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
-                                </div>
-                            </div>
-                        `;
-                    });
+        async function fetchMenuData() {
+            // Φόρτωση Ποτών
+            try {
+                const drinksRes = await fetch('/drinks.json');
+                if (drinksRes.ok) {
+                    const drinksData = await drinksRes.json();
+                    const drinksContainer = document.getElementById('drinks-container');
+                    
+                    renderDrinksCategory(drinksContainer, "Coffee Menu", drinksData.coffee);
+                    renderDrinksCategory(drinksContainer, "Spritz", drinksData.spritz);
+                    renderDrinksCategory(drinksContainer, "Classic Cocktails", drinksData.classic);
+                    renderDrinksCategory(drinksContainer, "Signature Cocktails", drinksData.signature);
+                    renderDrinksCategory(drinksContainer, "Spirits & Beers", drinksData.spirits);
+                    renderDrinksCategory(drinksContainer, "Wines", drinksData.wines);
                 }
-            } catch (error) {
-                console.error("Σφάλμα φόρτωσης:", error);
-            }
+            } catch (e) { console.log("Αναμονή για δεδομένα ποτών..."); }
+
+            // Φόρτωση Φαγητού
+            try {
+                const foodRes = await fetch('/food.json');
+                if (foodRes.ok) {
+                    const foodData = await foodRes.json();
+                    const foodContainer = document.getElementById('food-container');
+                    
+                    renderFoodCategory(foodContainer, "Bowls", foodData.bowls);
+                    renderFoodCategory(foodContainer, "Egg Dishes", foodData.eggs);
+                    renderFoodCategory(foodContainer, "Savory Options", foodData.savory);
+                    renderFoodCategory(foodContainer, "Sweet Options", foodData.sweet);
+                }
+            } catch (e) { console.log("Αναμονή για δεδομένα φαγητού..."); }
         }
 
         fetchMenuData();
