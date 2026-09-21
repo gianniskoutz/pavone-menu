@@ -99,7 +99,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Νέο στυλ για τους τίτλους των κατηγοριών (π.χ. SIGNATURE COCKTAILS) */
         .category-title {
             font-family: 'Playfair Display', serif;
             font-size: 18px;
@@ -113,6 +112,14 @@
         }
         .category-title:first-child {
             margin-top: 5px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 20px;
+            font-style: italic;
         }
 
         .menu-card {
@@ -201,6 +208,7 @@
         <p>Premium Quality Menu</p>
     </div>
 
+    <!-- Τα δύο βασικά Tabs -->
     <div class="nav-tabs">
         <button class="active" onclick="switchTab('coffee')">DRINKS & COFFEE</button>
         <button onclick="switchTab('food')">BRUNCH MENU</button>
@@ -227,10 +235,15 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Helper για γρήγορη δημιουργία κατηγοριών Ροφημάτων
+        // Τώρα οι τίτλοι εμφανίζονται ΠΑΝΤΑ, ακόμα και αν είναι άδειοι
         function renderDrinksCategory(container, title, items) {
-            if (!items || items.length === 0) return;
             container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            
+            if (!items || items.length === 0) {
+                container.innerHTML += `<p class="empty-state">Προσθέστε είδη από το Admin...</p>`;
+                return;
+            }
+            
             items.forEach(item => {
                 container.innerHTML += `
                     <div class="compact-item">
@@ -244,10 +257,14 @@
             });
         }
 
-        // Helper για γρήγορη δημιουργία κατηγοριών Φαγητού
         function renderFoodCategory(container, title, items) {
-            if (!items || items.length === 0) return;
             container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            
+            if (!items || items.length === 0) {
+                container.innerHTML += `<p class="empty-state">Προσθέστε είδη από το Admin...</p>`;
+                return;
+            }
+            
             items.forEach(item => {
                 container.innerHTML += `
                     <div class="menu-card">
@@ -265,35 +282,47 @@
         }
 
         async function fetchMenuData() {
-            // Φόρτωση Ποτών
+            // Δοκιμή φόρτωσης Δεδομένων Ποτών (Αν το αρχείο δεν υπάρχει ακόμα, απλά θα δείξει τους άδειους τίτλους)
             try {
                 const drinksRes = await fetch('/drinks.json');
+                const drinksContainer = document.getElementById('drinks-container');
+                
                 if (drinksRes.ok) {
                     const drinksData = await drinksRes.json();
-                    const drinksContainer = document.getElementById('drinks-container');
-                    
                     renderDrinksCategory(drinksContainer, "Coffee Menu", drinksData.coffee);
                     renderDrinksCategory(drinksContainer, "Spritz", drinksData.spritz);
                     renderDrinksCategory(drinksContainer, "Classic Cocktails", drinksData.classic);
                     renderDrinksCategory(drinksContainer, "Signature Cocktails", drinksData.signature);
                     renderDrinksCategory(drinksContainer, "Spirits & Beers", drinksData.spirits);
                     renderDrinksCategory(drinksContainer, "Wines", drinksData.wines);
+                } else {
+                    renderDrinksCategory(drinksContainer, "Coffee Menu", []);
+                    renderDrinksCategory(drinksContainer, "Spritz", []);
+                    renderDrinksCategory(drinksContainer, "Classic Cocktails", []);
+                    renderDrinksCategory(drinksContainer, "Signature Cocktails", []);
+                    renderDrinksCategory(drinksContainer, "Spirits & Beers", []);
+                    renderDrinksCategory(drinksContainer, "Wines", []);
                 }
-            } catch (e) { console.log("Αναμονή για δεδομένα ποτών..."); }
+            } catch (e) { console.log("Αναμονή για δεδομένα..."); }
 
-            // Φόρτωση Φαγητού
+            // Δοκιμή φόρτωσης Δεδομένων Φαγητού
             try {
                 const foodRes = await fetch('/food.json');
+                const foodContainer = document.getElementById('food-container');
+                
                 if (foodRes.ok) {
                     const foodData = await foodRes.json();
-                    const foodContainer = document.getElementById('food-container');
-                    
                     renderFoodCategory(foodContainer, "Bowls", foodData.bowls);
                     renderFoodCategory(foodContainer, "Egg Dishes", foodData.eggs);
                     renderFoodCategory(foodContainer, "Savory Options", foodData.savory);
                     renderFoodCategory(foodContainer, "Sweet Options", foodData.sweet);
+                } else {
+                    renderFoodCategory(foodContainer, "Bowls", []);
+                    renderFoodCategory(foodContainer, "Egg Dishes", []);
+                    renderFoodCategory(foodContainer, "Savory Options", []);
+                    renderFoodCategory(foodContainer, "Sweet Options", []);
                 }
-            } catch (e) { console.log("Αναμονή για δεδομένα φαγητού..."); }
+            } catch (e) { console.log("Αναμονή για δεδομένα..."); }
         }
 
         fetchMenuData();
