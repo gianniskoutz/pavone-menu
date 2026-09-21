@@ -1,203 +1,289 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pavone Menu</title>
-    
-    <!-- Απαραίτητο Script για το Login του Admin -->
+
+    <!-- Εισαγωγή Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Script για το Admin Login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-        /* Βασικές Ρυθμίσεις Σελίδας */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f7f6f2; /* Ελαφρύ μπεζ/γκρι για premium αίσθηση */
-            margin: 0;
-            padding: 0;
-            color: #333;
+        /* --- ΧΡΩΜΑΤΙΚΗ ΠΑΛΕΤΑ & ΜΕΤΑΒΛΗΤΕΣ --- */
+        :root {
+            --primary: #1a3632;
+            /* Βαθύ Πράσινο (Pavone) */
+            --accent: #c8a97e;
+            /* Σαμπανιζέ / Χρυσό */
+            --bg-color: #faf9f5;
+            /* Θερμό υπόλευκο φόντο */
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER --- */
         .header {
             text-align: center;
-            padding: 30px 20px;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
+            padding: 40px 20px 30px;
+            background-color: var(--primary);
+            color: var(--accent);
+            border-bottom: 4px solid var(--accent);
         }
 
         .header h1 {
             margin: 0;
-            letter-spacing: 2px;
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
         }
 
-        /* Τα κουμπιά πλοήγησης (Tabs) */
+        .header p {
+            margin: 8px 0 0 0;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #ffffff;
+            opacity: 0.7;
+        }
+
+        /* --- STICKY TABS (Πλοήγηση) --- */
         .nav-tabs {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             padding: 20px;
-            overflow-x: auto;
-        }
-        .nav-tabs button {
-            background-color: #e2ded5;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            color: #555;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .nav-tabs button.active {
-            background-color: #6fbba2; /* Το πράσινο χρώμα του Pavone */
-            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(250, 249, 245, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
-        /* Κεντρικό Κουτί Μενού */
+        .nav-tabs button {
+            background-color: transparent;
+            border: 1px solid #e2e2e2;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs button.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(26, 54, 50, 0.2);
+        }
+
+        /* --- LAYOUT & ANIMATIONS --- */
         .menu-container {
             max-width: 600px;
+            /* Διατηρεί τη φόρμα κινητού ακόμα και σε PC */
             margin: 0 auto;
-            padding: 0 15px 40px 15px;
+            padding: 15px 20px 60px 20px;
         }
 
-        /* Εναλλαγή Κατηγοριών */
         .menu-section {
             display: none;
+            animation: slideFadeUp 0.4s ease-out forwards;
         }
+
         .menu-section.active {
             display: block;
         }
 
-        /* Κάρτες Φαγητού */
-        .menu-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        @keyframes slideFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* --- ΚΑΡΤΕΣ ΦΑΓΗΤΟΥ --- */
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
         .menu-card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
+            display: block;
         }
+
         .menu-card-content {
-            padding: 15px;
+            padding: 22px;
         }
+
         .menu-card-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: baseline;
             margin-bottom: 8px;
         }
+
         .menu-card-header h3 {
             margin: 0;
-            font-size: 18px;
-        }
-        .menu-card-header strong {
-            color: #6fbba2;
-            font-size: 16px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--primary);
+            flex: 1;
+            padding-right: 15px;
+            line-height: 1.2;
         }
 
-        /* Δικά σου CSS για κείμενα & καφέδες */
+        .menu-card-header strong {
+            color: var(--accent);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
         .product-desc {
             font-size: 14px;
-            color: #666;
-            line-height: 1.5;
+            color: var(--text-muted);
+            line-height: 1.6;
             margin: 0;
         }
+
+        /* --- ΛΙΣΤΑ ΚΑΦΕΔΩΝ --- */
         .compact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
+            background: var(--card-bg);
+            padding: 10px 22px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
         }
+
         .compact-item {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #ddd;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
+
         .compact-item:last-child {
             border-bottom: none;
-            padding-bottom: 0;
         }
+
         .compact-item h4 {
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .compact-item p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .compact-item strong {
+            color: var(--accent);
             font-size: 16px;
+            font-weight: 600;
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Επικεφαλίδα (Header) -->
+    <!-- Header -->
     <div class="header">
         <h1>PAVONE</h1>
+        <p>Premium Quality Menu</p>
     </div>
 
-    <!-- Κουμπιά (Tabs) για Εναλλαγή Κατηγοριών -->
+    <!-- Sticky Tabs -->
     <div class="nav-tabs">
         <button class="active" onclick="switchTab('food')">BRUNCH & FOOD</button>
         <button onclick="switchTab('coffee')">COFFEE MENU</button>
     </div>
 
-    <!-- Κεντρικός χώρος που θα εμφανίζονται τα δεδομένα -->
+    <!-- Κεντρικός Περιέκτης Μενού -->
     <div class="menu-container">
-        
-        <!-- Τομέας Φαγητού -->
+
+        <!-- Section Φαγητού -->
         <div id="section-food" class="menu-section active">
-            <div id="food-list">
-                <!-- Η Javascript θα βάλει τις κάρτες φαγητού εδώ -->
-                <p style="text-align:center; color:#999;">Φόρτωση μενού...</p>
-            </div>
+            <div id="food-list"></div>
         </div>
 
-        <!-- Τομέας Καφέδων -->
+        <!-- Section Καφέδων -->
         <div id="section-coffee" class="menu-section">
-            <div id="coffee-list" class="compact-list">
-                <!-- Η Javascript θα βάλει τους καφέδες εδώ -->
-            </div>
+            <div id="coffee-list" class="compact-list"></div>
         </div>
 
     </div>
 
-    <!-- JAVASCRIPT: Η λογική της σελίδας -->
+    <!-- Javascript Δεδομένων & Πλοήγησης -->
     <script>
-        // 1. Script για αλλαγή των Tabs (Φαγητό -> Καφές)
+        // Λειτουργία Εναλλαγής Tabs
         function switchTab(tabName) {
-            // Κρύβουμε όλα τα sections
             document.querySelectorAll('.menu-section').forEach(section => {
                 section.classList.remove('active');
             });
-            // Βγάζουμε το πράσινο χρώμα από όλα τα κουμπιά
             document.querySelectorAll('.nav-tabs button').forEach(button => {
                 button.classList.remove('active');
             });
-
-            // Εμφανίζουμε το σωστό section και βάφουμε πράσινο το κουμπί που πατήθηκε
             document.getElementById('section-' + tabName).classList.add('active');
             event.target.classList.add('active');
+
+            // Ομαλό scroll στην κορυφή του μενού αν είναι πιο κάτω
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 2. Script που διαβάζει τα δεδομένα από το CMS (menu.json)
+        // Άντληση Δεδομένων από το CMS
         async function fetchMenuData() {
             try {
                 const response = await fetch('/menu.json');
                 if (!response.ok) {
-                    document.getElementById('food-list').innerHTML = "<p style='text-align:center;'>Δεν βρέθηκαν πιάτα. Προσθέστε από το Admin.</p>";
+                    document.getElementById('food-list').innerHTML = "<p style='text-align:center; padding: 40px;'>Το μενού ετοιμάζεται...</p>";
                     return;
                 }
 
                 const data = await response.json();
-                
-                // --- Δημιουργία λίστας Φαγητού ---
+
+                // Δημιουργία Φαγητού
                 const foodContainer = document.getElementById('food-list');
                 if (data.food && data.food.length > 0) {
-                    foodContainer.innerHTML = ''; // Καθαρίζουμε το "Φόρτωση..."
+                    foodContainer.innerHTML = '';
                     data.food.forEach(item => {
                         foodContainer.innerHTML += `
                             <div class="menu-card">
@@ -212,11 +298,9 @@
                             </div>
                         `;
                     });
-                } else {
-                    foodContainer.innerHTML = "<p style='text-align:center;'>Το μενού φαγητού είναι άδειο.</p>";
                 }
 
-                // --- Δημιουργία λίστας Καφέδων ---
+                // Δημιουργία Καφέδων
                 const coffeeContainer = document.getElementById('coffee-list');
                 if (data.coffee && data.coffee.length > 0) {
                     coffeeContainer.innerHTML = '';
@@ -225,7 +309,7 @@
                             <div class="compact-item">
                                 <div>
                                     <h4>${item.title}</h4>
-                                    ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
+                                    ${item.description ? `<p>${item.description}</p>` : ''}
                                 </div>
                                 <strong>${item.price} €</strong>
                             </div>
@@ -233,14 +317,13 @@
                     });
                 }
             } catch (error) {
-                console.error("Σφάλμα:", error);
+                console.error("Σφάλμα φόρτωσης:", error);
             }
         }
 
-        // Τρέχουμε τη συνάρτηση με το που φορτώσει η σελίδα
         fetchMenuData();
 
-        // 3. Απαραίτητο Script για το Netlify Identity (Για το Login)
+        // Netlify Identity Login Logic
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -252,4 +335,5 @@
         }
     </script>
 </body>
+
 </html>
