@@ -1,172 +1,120 @@
 <!DOCTYPE html>
 <html lang="el">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavone Menu</title>
+    
+    <!-- Απαραίτητο Script για το Login του Admin -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Google Fonts για πιο premium αίσθηση -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #fafafa;
-            --primary-dark: #2c3e50;
-            --coffee-color: #f6e6d9;
-            /* Το Peach/Beige του χαρτιού */
-            --food-color: #79c5b4;
-            /* Το Mint/Teal της Elegoo/Κάρτας */
-            --card-bg: #ffffff;
-        }
 
+    <style>
+        /* Βασικές Ρυθμίσεις Σελίδας */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f6f2; /* Ελαφρύ μπεζ/γκρι για premium αίσθηση */
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--primary-dark);
-            padding-bottom: 50px;
+            color: #333;
         }
 
-        /* --- HEADER & NAVIGATION --- */
         .header {
             text-align: center;
-            padding: 25px 0 15px 0;
-            background-color: var(--card-bg);
+            padding: 30px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 26px;
-            letter-spacing: 4px;
-            font-weight: 700;
+            letter-spacing: 2px;
+            color: #2c3e50;
         }
 
-        .nav-categories {
-            position: sticky;
-            top: 0;
-            background: var(--card-bg);
-            padding: 15px 20px;
+        /* Τα κουμπιά πλοήγησης (Tabs) */
+        .nav-tabs {
             display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            z-index: 100;
-            /* Κρύβουμε τη μπάρα κύλισης */
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .nav-categories::-webkit-scrollbar {
-            display: none;
-        }
-
-        .category-btn {
-            background-color: var(--coffee-color);
-            color: var(--primary-dark);
-            border: none;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Το δεύτερο κουμπί έχει το πράσινο χρώμα */
-        .category-btn.food-btn {
-            background-color: var(--food-color);
-            color: white;
-        }
-
-        /* --- MENU LAYOUT (GRID) --- */
-        .menu-container {
+            justify-content: center;
+            gap: 10px;
             padding: 20px;
+            overflow-x: auto;
+        }
+        .nav-tabs button {
+            background-color: #e2ded5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .nav-tabs button.active {
+            background-color: #6fbba2; /* Το πράσινο χρώμα του Pavone */
+            color: #fff;
+        }
+
+        /* Κεντρικό Κουτί Μενού */
+        .menu-container {
             max-width: 600px;
             margin: 0 auto;
+            padding: 0 15px 40px 15px;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 22px;
-            margin: 40px 0 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Εναλλαγή Κατηγοριών */
+        .menu-section {
+            display: none;
+        }
+        .menu-section.active {
+            display: block;
         }
 
-        /* --- PRODUCT CARDS (Οι κάρτες με τις εικόνες) --- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            /* 1 στήλη στα κινητά */
-            gap: 25px;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 16px;
+        /* Κάρτες Φαγητού */
+        .menu-card {
+            background: #fff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-
-        /* Ο χώρος για τη φωτογραφία */
-        .product-image {
+        .menu-card img {
             width: 100%;
             height: 220px;
-            background-color: #eee;
             object-fit: cover;
         }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+        .menu-card-content {
+            padding: 15px;
         }
-
-        .product-header {
+        .menu-card-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 8px;
         }
-
-        .product-title {
+        .menu-card-header h3 {
             margin: 0;
             font-size: 18px;
-            font-weight: 700;
-            line-height: 1.3;
-            padding-right: 15px;
+        }
+        .menu-card-header strong {
+            color: #6fbba2;
+            font-size: 16px;
         }
 
-        .product-price {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--food-color);
-            /* Πράσινο χρώμα στην τιμή */
-            white-space: nowrap;
-        }
-
+        /* Δικά σου CSS για κείμενα & καφέδες */
         .product-desc {
-            margin: 0;
             font-size: 14px;
             color: #666;
             line-height: 1.5;
+            margin: 0;
         }
-
-        /* --- COMPACT LIST (Για καφέδες/αναψυκτικά χωρίς φωτό) --- */
         .compact-list {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
         }
-
         .compact-item {
             display: flex;
             justify-content: space-between;
@@ -174,103 +122,134 @@
             padding-bottom: 15px;
             border-bottom: 1px dashed #ddd;
         }
+        .compact-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .compact-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
     </style>
 </head>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-
 <body>
 
+    <!-- Επικεφαλίδα (Header) -->
     <div class="header">
         <h1>PAVONE</h1>
     </div>
 
-    <!-- Τα κουμπιά πλοήγησης -->
-    <div class="nav-categories">
-        <button class="category-btn" onclick="scrollToSection('coffee')">COFFEE</button>
-        <button class="category-btn food-btn" onclick="scrollToSection('food')">BRUNCH & FOOD</button>
-        <button class="category-btn" onclick="scrollToSection('cocktails')">COCKTAILS</button>
+    <!-- Κουμπιά (Tabs) για Εναλλαγή Κατηγοριών -->
+    <div class="nav-tabs">
+        <button class="active" onclick="switchTab('food')">BRUNCH & FOOD</button>
+        <button onclick="switchTab('coffee')">COFFEE MENU</button>
     </div>
 
+    <!-- Κεντρικός χώρος που θα εμφανίζονται τα δεδομένα -->
     <div class="menu-container">
-
-        <!-- SECTION 1: FOOD (Με εικόνες) -->
-        <h2 id="food" class="section-title">Brunch & Food</h2>
-
-        <div class="product-grid">
-            <!-- Κάρτα Πιάτου 1 -->
-            <div class="product-card">
-                <!-- Εδώ μπαίνει η φωτό του φωτογράφου -->
-                <img class="product-image"
-                    src="https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&w=600&auto=format&fit=crop"
-                    alt="Pancakes">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 class="product-title">Pancakes με Σοκολάτα</h3>
-                        <span class="product-price">7.50€</span>
-                    </div>
-                    <p class="product-desc">Αφράτα pancakes με πραλίνα φουντουκιού, τριμμένο μπισκότο και φρέσκες
-                        φράουλες.</p>
-                </div>
-            </div>
-
-            <!-- Κάρτα Πιάτου 2 -->
-            <div class="product-card">
-                <img class="product-image"
-                    src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=600&auto=format&fit=crop"
-                    alt="Benedict">
-                <div class="product-info">
-                    <div class="product-header">
-                        <h3 class="product-title">Αυγά Benedict</h3>
-                        <span class="product-price">9.00€</span>
-                    </div>
-                    <p class="product-desc">Δύο αυγά ποσέ πάνω σε φρυγανισμένο ψωμί, με καπνιστό σολομό και σάλτσα
-                        hollandaise.</p>
-                </div>
+        
+        <!-- Τομέας Φαγητού -->
+        <div id="section-food" class="menu-section active">
+            <div id="food-list">
+                <!-- Η Javascript θα βάλει τις κάρτες φαγητού εδώ -->
+                <p style="text-align:center; color:#999;">Φόρτωση μενού...</p>
             </div>
         </div>
 
-        <!-- SECTION 2: COFFEE (Συμπαγής Λίστα χωρίς εικόνες) -->
-        <h2 id="coffee" class="section-title" style="margin-top: 60px;">Coffee Menu</h2>
-
-        <div class="compact-list">
-            <div class="compact-item">
-                <div>
-                    <div class="product-title">Espresso</div>
-                    <div class="product-desc">Single / Double</div>
-                </div>
-                <div class="product-price" style="color:var(--primary-dark);">3.0 / 3.8€</div>
-            </div>
-
-            <div class="compact-item">
-                <div>
-                    <div class="product-title">Freddo Espresso</div>
-                    <div class="product-desc">Take away: 2.0€</div>
-                </div>
-                <div class="product-price" style="color:var(--primary-dark);">3.8€</div>
+        <!-- Τομέας Καφέδων -->
+        <div id="section-coffee" class="menu-section">
+            <div id="coffee-list" class="compact-list">
+                <!-- Η Javascript θα βάλει τους καφέδες εδώ -->
             </div>
         </div>
 
     </div>
 
-    <!-- Απλό Script για το Smooth Scrolling -->
+    <!-- JAVASCRIPT: Η λογική της σελίδας -->
     <script>
-        function scrollToSection(id) {
-            const element = document.getElementById(id);
-            // Αφαιρούμε 80px από την κορυφή για να μην κρύβεται ο τίτλος κάτω από το sticky menu
-            const y = element.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top: y, behavior: 'smooth' });
+        // 1. Script για αλλαγή των Tabs (Φαγητό -> Καφές)
+        function switchTab(tabName) {
+            // Κρύβουμε όλα τα sections
+            document.querySelectorAll('.menu-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Βγάζουμε το πράσινο χρώμα από όλα τα κουμπιά
+            document.querySelectorAll('.nav-tabs button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Εμφανίζουμε το σωστό section και βάφουμε πράσινο το κουμπί που πατήθηκε
+            document.getElementById('section-' + tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // 2. Script που διαβάζει τα δεδομένα από το CMS (menu.json)
+        async function fetchMenuData() {
+            try {
+                const response = await fetch('/menu.json');
+                if (!response.ok) {
+                    document.getElementById('food-list').innerHTML = "<p style='text-align:center;'>Δεν βρέθηκαν πιάτα. Προσθέστε από το Admin.</p>";
+                    return;
+                }
+
+                const data = await response.json();
+                
+                // --- Δημιουργία λίστας Φαγητού ---
+                const foodContainer = document.getElementById('food-list');
+                if (data.food && data.food.length > 0) {
+                    foodContainer.innerHTML = ''; // Καθαρίζουμε το "Φόρτωση..."
+                    data.food.forEach(item => {
+                        foodContainer.innerHTML += `
+                            <div class="menu-card">
+                                ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+                                <div class="menu-card-content">
+                                    <div class="menu-card-header">
+                                        <h3>${item.title}</h3>
+                                        <strong>${item.price} €</strong>
+                                    </div>
+                                    ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    foodContainer.innerHTML = "<p style='text-align:center;'>Το μενού φαγητού είναι άδειο.</p>";
+                }
+
+                // --- Δημιουργία λίστας Καφέδων ---
+                const coffeeContainer = document.getElementById('coffee-list');
+                if (data.coffee && data.coffee.length > 0) {
+                    coffeeContainer.innerHTML = '';
+                    data.coffee.forEach(item => {
+                        coffeeContainer.innerHTML += `
+                            <div class="compact-item">
+                                <div>
+                                    <h4>${item.title}</h4>
+                                    ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
+                                </div>
+                                <strong>${item.price} €</strong>
+                            </div>
+                        `;
+                    });
+                }
+            } catch (error) {
+                console.error("Σφάλμα:", error);
+            }
+        }
+
+        // Τρέχουμε τη συνάρτηση με το που φορτώσει η σελίδα
+        fetchMenuData();
+
+        // 3. Απαραίτητο Script για το Netlify Identity (Για το Login)
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
         }
     </script>
 </body>
-
 </html>
