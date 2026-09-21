@@ -1,0 +1,42 @@
+{
+  "coffee": [
+    {
+      "title": "ESPRESSO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.0/3.8"
+    },
+    {
+      "title": "CAPUCCINO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.5/3.8"
+    },
+    {
+      "title": "HOMEMADE LEMONADE - ΣΠΙΤΙΚΗ ΛΕΜΟΝΑΔΑ",
+      "price": "5",
+      "description": "ginger, sour cherry, strawberry & peppermint, grapefruit"
+    }
+  ],
+  "spritz": [
+    {
+      "title": "MASTIC BLOOM",
+      "price": "9",
+      "description": "Mastiha, cucumber, premium tonic water"
+    },
+    {
+      "title": "APEROL SPRITZ",
+      "price": "9",
+      "description": "Aperol, prosecco, grapefruit soda"
+    }
+  ],
+  "classic": [],
+  "signature": [
+    {
+      "title": "BLOOM",
+      "price": "12",
+      "description": "Vodka, caramel, lime, pineapple, tonka bean bitters"
+    },
+    {
+      "title": "KARMA",
+      "price": "11",
+      "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg"
+    }
+  ]
+}
