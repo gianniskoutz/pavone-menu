@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pavone Menu</title>
     
-    <!-- Εισαγωγή Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-
-    <!-- Script για το Admin Login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-        /* --- ΧΡΩΜΑΤΙΚΗ ΠΑΛΕΤΑ & ΜΕΤΑΒΛΗΤΕΣ --- */
         :root {
-            --primary: #6fbba2;  /* Ανοιχτό μπλε-πράσινο */
-            --accent: #ffe0d1;   /* Απαλό ροδακινί */
-            --bg-color: #fcfbf9; /* Πολύ απαλό υπόλευκο */
+            --primary: #6fbba2;  
+            --accent: #ffe0d1;   
+            --bg-color: #fcfbf9; 
             --card-bg: #ffffff;
             --text-main: #333333;
             --text-muted: #666666;
@@ -33,7 +29,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- HEADER --- */
         .header {
             text-align: center;
             padding: 30px 20px 20px;
@@ -56,7 +51,6 @@
             color: var(--text-muted);
         }
 
-        /* --- STICKY TABS (Πλοήγηση) --- */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -69,7 +63,7 @@
             backdrop-filter: blur(10px);
         }
         .nav-tabs button {
-            background-color: var(--accent); /* Ροδακινί φόντο για τα ανενεργά */
+            background-color: var(--accent); 
             border: none;
             padding: 10px 22px;
             border-radius: 30px;
@@ -83,12 +77,11 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .nav-tabs button.active {
-            background-color: var(--primary); /* Μπλε-πράσινο για το ενεργό */
+            background-color: var(--primary); 
             color: #ffffff;
             box-shadow: 0 4px 10px rgba(111, 187, 162, 0.3);
         }
 
-        /* --- LAYOUT & ANIMATIONS --- */
         .menu-container {
             max-width: 600px;
             margin: 0 auto;
@@ -106,7 +99,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- ΚΑΡΤΕΣ ΦΑΓΗΤΟΥ --- */
         .menu-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -151,7 +143,6 @@
             margin: 0;
         }
 
-        /* --- ΛΙΣΤΑ ΚΑΦΕΔΩΝ --- */
         .compact-list {
             background: var(--card-bg);
             padding: 10px 22px;
@@ -189,34 +180,31 @@
 </head>
 <body>
 
-    <!-- Header -->
     <div class="header">
         <h1>PAVONE</h1>
         <p>Premium Quality Menu</p>
     </div>
 
-    <!-- Sticky Tabs -->
+    <!-- Η σειρά των Tabs άλλαξε. Ο Καφές είναι πλέον το πρώτο και ενεργό (active) κουμπί. -->
     <div class="nav-tabs">
-        <button class="active" onclick="switchTab('food')">BRUNCH & FOOD</button>
-        <button onclick="switchTab('coffee')">COFFEE MENU</button>
+        <button class="active" onclick="switchTab('coffee')">COFFEE MENU</button>
+        <button onclick="switchTab('food')">BRUNCH & FOOD</button>
     </div>
 
-    <!-- Κεντρικός Περιέκτης Μενού -->
     <div class="menu-container">
         
-        <!-- Section Φαγητού -->
-        <div id="section-food" class="menu-section active">
-            <div id="food-list"></div>
-        </div>
-
-        <!-- Section Καφέδων -->
-        <div id="section-coffee" class="menu-section">
+        <!-- Section Καφέδων (Πλέον μπήκε πρώτο και πήρε την κλάση active) -->
+        <div id="section-coffee" class="menu-section active">
             <div id="coffee-list" class="compact-list"></div>
         </div>
 
+        <!-- Section Φαγητού -->
+        <div id="section-food" class="menu-section">
+            <div id="food-list"></div>
+        </div>
+
     </div>
 
-    <!-- Javascript Δεδομένων & Πλοήγησης -->
     <script>
         function switchTab(tabName) {
             document.querySelectorAll('.menu-section').forEach(section => {
@@ -235,12 +223,28 @@
             try {
                 const response = await fetch('/menu.json');
                 if (!response.ok) {
-                    document.getElementById('food-list').innerHTML = "<p style='text-align:center; padding: 40px;'>Το μενού ετοιμάζεται...</p>";
+                    document.getElementById('coffee-list').innerHTML = "<p style='text-align:center; padding: 40px;'>Το μενού ετοιμάζεται...</p>";
                     return;
                 }
 
                 const data = await response.json();
                 
+                const coffeeContainer = document.getElementById('coffee-list');
+                if (data.coffee && data.coffee.length > 0) {
+                    coffeeContainer.innerHTML = '';
+                    data.coffee.forEach(item => {
+                        coffeeContainer.innerHTML += `
+                            <div class="compact-item">
+                                <div>
+                                    <h4>${item.title}</h4>
+                                    ${item.description ? `<p>${item.description}</p>` : ''}
+                                </div>
+                                <strong>${item.price} €</strong>
+                            </div>
+                        `;
+                    });
+                }
+
                 const foodContainer = document.getElementById('food-list');
                 if (data.food && data.food.length > 0) {
                     foodContainer.innerHTML = ''; 
@@ -255,22 +259,6 @@
                                     </div>
                                     ${item.description ? `<p class="product-desc">${item.description}</p>` : ''}
                                 </div>
-                            </div>
-                        `;
-                    });
-                }
-
-                const coffeeContainer = document.getElementById('coffee-list');
-                if (data.coffee && data.coffee.length > 0) {
-                    coffeeContainer.innerHTML = '';
-                    data.coffee.forEach(item => {
-                        coffeeContainer.innerHTML += `
-                            <div class="compact-item">
-                                <div>
-                                    <h4>${item.title}</h4>
-                                    ${item.description ? `<p>${item.description}</p>` : ''}
-                                </div>
-                                <strong>${item.price} €</strong>
                             </div>
                         `;
                     });
