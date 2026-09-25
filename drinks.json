@@ -1,138 +1,28 @@
 {
   "coffee": [
-    {
-      "title": "ESPRESSO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3.0/3.8"
-    },
-    {
-      "title": "CAPUCCINO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3.5/3.8"
-    },
-    {
-      "title": "ESPRESSO LUNGO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3/3.8"
-    },
-    {
-      "title": "HOMEMADE LEMONADE - ΣΠΙΤΙΚΗ ΛΕΜΟΝΑΔΑ",
-      "price": "5",
-      "description": "ginger, sour cherry, strawberry & peppermint, grapefruit"
-    },
-    {
-      "title": "FREDDO CAPUCCINO",
-      "price": "4"
-    },
-    {
-      "title": "CAPUCCINO SINGLE/DOUBLE - ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3.5/3.8"
-    },
-    {
-      "title": "FLAT WHITE",
-      "price": "3.8"
-    },
-    {
-      "title": "AMERICANO SINGLE/DOUBLE",
-      "price": "3/3.8"
-    },
-    {
-      "title": "FILTER COFFEE (ΓΑΛΛΙΚΟΣ)",
-      "price": "4.3"
-    },
-    {
-      "title": "GREEK COFFEE SINGLE/DOUBLE - ΕΛΛΗΝΙΚΟΣ ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "2.5/3.5"
-    },
-    {
-      "title": "NESCAFE",
-      "price": "3.5"
-    },
-    {
-      "title": "CHOCOLATE HOT/COLD - ΣΟΚΟΛΑΤΑ ΖΕΣΤΗ/ΚΡΥΑ",
-      "price": "4.5"
-    },
-    {
-      "title": "HOT TEA - ΖΕΣΤΟ ΤΣΑΙ",
-      "price": "3.5"
-    },
-    {
-      "title": "FRESH ORANGE JUICE - ΦΥΣΙΚΟΣ ΧΥΜΟΣ ΠΟΡΤΟΚΑΛΙ",
-      "price": "4"
-    },
-    {
-      "title": "FRESH MIXED FRUIT JUICE - ΦΥΣΙΚΟΣ ΧΥΜΟΣ ΑΝΑΜΕΙΚΤΟΣ",
-      "price": "5"
-    },
-    {
-      "title": "COCA COLA 250ML",
-      "price": "3"
-    },
-    {
-      "title": "COCA COLA ZERO 250ML",
-      "price": "3"
-    },
-    {
-      "title": "3 CENTS GRAPEFRUIT SODA 200ML",
-      "price": "4.5"
-    },
-    {
-      "title": "LE TRIBUTE GINGER BEER 200ML",
-      "price": "4.5"
-    },
-    {
-      "title": "SPARKLING WATER 250ML - ΑΝΘΡΑΚΟΥΧΟ ΝΕΡΟ",
-      "price": "3.5"
-    },
-    {
-      "title": "WATER 500ML - ΝΕΡΟ",
-      "price": "0.5"
-    }
+    { "title": "ESPRESSO SINGLE/DOUBLE", "price": "3.0/3.8" }
   ],
-  "spritz": [
-    {
-      "title": "MASTIC BLOOM",
-      "price": "9",
-      "description": "Mastiha, cucumber, premium tonic water"
-    },
-    {
-      "title": "APEROL SPRITZ",
-      "price": "9",
-      "description": "Aperol, prosecco, grapefruit soda"
-    }
-  ],
-  "classic": [
-    {
-      "title": "DAIQUIRI/MARGARITA/CAIPIRINHA/MOHITO/OLD FASHIONED/PORNSTAR",
-      "price": "10"
-    },
-    {
-      "title": "PALOMA/NEGRONI",
-      "price": "11"
-    }
-  ],
+  "spritz": [],
+  "classic": [],
   "signature": [
-    {
-      "title": "BLOOM",
-      "price": "12",
-      "description": "Vodka, caramel, lime, pineapple, tonka bean bitters"
-    },
-    {
-      "title": "KARMA",
-      "price": "11",
-      "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg"
-    }
+    { "title": "BLOOM", "price": "12", "description": "Vodka, caramel, lime, pineapple, tonka bean bitters" },
+    { "title": "KARMA", "price": "11", "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg" }
   ],
   "spirits": [
-    {
-      "title": "SIMPLE",
-      "price": "9"
-    },
-    {
-      "title": "SPECIAL",
-      "price": "11"
-    },
-    {
-      "title": "PREMIUM",
-      "price": "14"
-    }
+    { "title": "SIMPLE", "price": "9" },
+    { "title": "SPECIAL", "price": "11" },
+    { "title": "PREMIUM", "price": "14" }
   ],
-  "wines": []
+  "beers": [
+    { "title": "CORONA", "price": "6", "description": "Mexican Lager" },
+    { "title": "STELLA ARTOIS", "price": "5" }
+  ],
+  "wines_glass": [
+    { "title": "ΛΕΥΚΟ (ΠΟΤΗΡΙ) / WHITE", "price": "6" },
+    { "title": "ΚΟΚΚΙΝΟ (ΠΟΤΗΡΙ) / RED", "price": "7" }
+  ],
+  "wines_bottle": [
+    { "title": "ΛΕΥΚΟ (ΜΠΟΥΚΑΛΙ) / WHITE", "price": "25" },
+    { "title": "ΚΟΚΚΙΝΟ (ΜΠΟΥΚΑΛΙ) / RED", "price": "28" }
+  ]
 }
