@@ -55,23 +55,37 @@ collections:
               - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
               - { label: "Περιγραφή", name: "description", widget: "string", required: false, hint: "Αναλυτικά τα υλικά (π.χ. Vodka, caramel, lime...)." }
           
-          - label: "Spirits & Beers"
+          - label: "Spirits"
             name: "spirits"
             widget: "list"
-            hint: "Απλά και premium ποτά, καθώς και μπύρες."
             fields:
-              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. PREMIUM ΠΟΤΟ ή CORONA" }
-              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
-              - { label: "Περιγραφή", name: "description", widget: "string", required: false }
+              - { label: "Όνομα / Name", name: "title", widget: "string" }
+              - { label: "Τιμή / Price", name: "price", widget: "string" }
+              - { label: "Περιγραφή / Description", name: "description", widget: "string", required: false, hint: "π.χ. Ξηρό, με νότες εσπεριδοειδών / Dry, with citrus notes" }
           
-          - label: "Κρασιά (Ποτήρι & Μπουκάλι)"
-            name: "wines"
+          - label: "Μπύρες / Beers"
+            name: "beers"
             widget: "list"
-            hint: "Λευκά, κόκκινα, ροζέ."
             fields:
-              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. ΛΕΥΚΟ ΞΗΡΟ ΠΟΤΗΡΙ" }
-              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
-              - { label: "Περιγραφή", name: "description", widget: "string", required: false }
+              - { label: "Όνομα / Name", name: "title", widget: "string" }
+              - { label: "Τιμή / Price", name: "price", widget: "string" }
+              - { label: "Περιγραφή / Description", name: "description", widget: "string", required: false }
+          
+          - label: "Κρασιά Ποτήρι / Wines (Glass)"
+            name: "wines_glass"
+            widget: "list"
+            fields:
+              - { label: "Όνομα / Name", name: "title", widget: "string" }
+              - { label: "Τιμή / Price", name: "price", widget: "string" }
+              - { label: "Περιγραφή / Description", name: "description", widget: "string", required: false }
+
+          - label: "Κρασιά Μπουκάλι / Wines (Bottle)"
+            name: "wines_bottle"
+            widget: "list"
+            fields:
+              - { label: "Όνομα / Name", name: "title", widget: "string" }
+              - { label: "Τιμή / Price", name: "price", widget: "string" }
+              - { label: "Περιγραφή / Description", name: "description", widget: "string", required: false }
 
       - label: "2. Brunch & Food"
         name: "food"
