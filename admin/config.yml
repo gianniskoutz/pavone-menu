@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  
+publish_mode: editorial_workflow
 
 # Εδώ μπαίνει το λογότυπο που θα φαίνεται στην οθόνη εισόδου του Admin
 logo_url: "https://pavonemenu.netlify.app/images/logo.png"
