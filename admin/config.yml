@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  site_domain: pavonemenu.netlify.app
   
 publish_mode: editorial_workflow
 
