@@ -299,8 +299,8 @@
             });
         }
 
-        async function fetchMenuData() {
-            // Δοκιμή φόρτωσης Δεδομένων Ποτών (Αν το αρχείο δεν υπάρχει ακόμα, απλά θα δείξει τους άδειους τίτλους)
+       async function fetchMenuData() {
+            // Δοκιμή φόρτωσης Δεδομένων Ποτών
             try {
                 const drinksRes = await fetch('/drinks.json');
                 const drinksContainer = document.getElementById('drinks-container');
@@ -311,15 +311,23 @@
                     renderDrinksCategory(drinksContainer, "Spritz", drinksData.spritz);
                     renderDrinksCategory(drinksContainer, "Classic Cocktails", drinksData.classic);
                     renderDrinksCategory(drinksContainer, "Signature Cocktails", drinksData.signature);
-                    renderDrinksCategory(drinksContainer, "Spirits & Beers", drinksData.spirits);
-                    renderDrinksCategory(drinksContainer, "Wines", drinksData.wines);
+                    
+                    // Νέες, διαχωρισμένες κατηγορίες με δίγλωσσους τίτλους
+                    renderDrinksCategory(drinksContainer, "Spirits", drinksData.spirits);
+                    renderDrinksCategory(drinksContainer, "Μπύρες / Beers", drinksData.beers);
+                    renderDrinksCategory(drinksContainer, "Κρασιά Ποτήρι / Wines (Glass)", drinksData.wines_glass);
+                    renderDrinksCategory(drinksContainer, "Κρασιά Μπουκάλι / Wines (Bottle)", drinksData.wines_bottle);
                 } else {
                     renderDrinksCategory(drinksContainer, "Coffee Menu", []);
                     renderDrinksCategory(drinksContainer, "Spritz", []);
                     renderDrinksCategory(drinksContainer, "Classic Cocktails", []);
                     renderDrinksCategory(drinksContainer, "Signature Cocktails", []);
-                    renderDrinksCategory(drinksContainer, "Spirits & Beers", []);
-                    renderDrinksCategory(drinksContainer, "Wines", []);
+                    
+                    // Fallback κενές κατηγορίες
+                    renderDrinksCategory(drinksContainer, "Spirits", []);
+                    renderDrinksCategory(drinksContainer, "Μπύρες / Beers", []);
+                    renderDrinksCategory(drinksContainer, "Κρασιά Ποτήρι / Wines (Glass)", []);
+                    renderDrinksCategory(drinksContainer, "Κρασιά Μπουκάλι / Wines (Bottle)", []);
                 }
             } catch (e) { console.log("Αναμονή για δεδομένα..."); }
 
