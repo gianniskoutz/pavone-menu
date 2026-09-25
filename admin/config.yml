@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# Εδώ μπαίνει το λογότυπο που θα φαίνεται στην οθόνη εισόδου του Admin
+logo_url: "https://pavonemenu.netlify.app/images/logo.png"
+
 media_folder: "images"
 public_folder: "/images"
 
@@ -13,18 +16,100 @@ collections:
         name: "drinks"
         file: "drinks.json"
         fields:
-          - { label: "Καφέδες (Coffee Menu)", name: "coffee", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
-          - { label: "Spritz", name: "spritz", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
-          - { label: "Classic Cocktails", name: "classic", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
-          - { label: "Signature Cocktails", name: "signature", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
-          - { label: "Spirits & Beers", name: "spirits", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
-          - { label: "Κρασιά (Ποτήρι & Μπουκάλι)", name: "wines", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "string", required: false} ] }
+          - label: "Καφέδες (Coffee Menu)"
+            name: "coffee"
+            widget: "list"
+            hint: "Λίστα καφέδων και φρέσκων χυμών."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. FREDDO ESPRESSO" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό (π.χ. 3.50). Το € μπαίνει αυτόματα." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false, hint: "Προαιρετικό. π.χ. single/double, ή συστατικά για χυμούς." }
+          
+          - label: "Spritz"
+            name: "spritz"
+            widget: "list"
+            hint: "Τα Spritz cocktails του καταλόγου."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. APEROL SPRITZ" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό (π.χ. 9.00)." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false, hint: "Συστατικά (π.χ. Aperol, prosecco, grapefruit soda)." }
+          
+          - label: "Classic Cocktails"
+            name: "classic"
+            widget: "list"
+            hint: "Κλασικά κοκτέιλ."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. MARGARITA" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false, hint: "Συστατικά." }
+          
+          - label: "Signature Cocktails"
+            name: "signature"
+            widget: "list"
+            hint: "Τα ιδιαίτερα κοκτέιλ του Pavone."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. BLOOM" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false, hint: "Αναλυτικά τα υλικά (π.χ. Vodka, caramel, lime...)." }
+          
+          - label: "Spirits & Beers"
+            name: "spirits"
+            widget: "list"
+            hint: "Απλά και premium ποτά, καθώς και μπύρες."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. PREMIUM ΠΟΤΟ ή CORONA" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false }
+          
+          - label: "Κρασιά (Ποτήρι & Μπουκάλι)"
+            name: "wines"
+            widget: "list"
+            hint: "Λευκά, κόκκινα, ροζέ."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. ΛΕΥΚΟ ΞΗΡΟ ΠΟΤΗΡΙ" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "string", required: false }
 
       - label: "2. Brunch & Food"
         name: "food"
         file: "food.json"
         fields:
-          - { label: "Bowls", name: "bowls", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "text", required: false}, {label: "Φωτογραφία", name: "image", widget: "image", required: false} ] }
-          - { label: "Egg Dishes", name: "eggs", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "text", required: false}, {label: "Φωτογραφία", name: "image", widget: "image", required: false} ] }
-          - { label: "Savory Options", name: "savory", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "text", required: false}, {label: "Φωτογραφία", name: "image", widget: "image", required: false} ] }
-          - { label: "Sweet Options", name: "sweet", widget: "list", fields: [ {label: "Όνομα", name: "title", widget: "string"}, {label: "Τιμή", name: "price", widget: "string"}, {label: "Περιγραφή", name: "description", widget: "text", required: false}, {label: "Φωτογραφία", name: "image", widget: "image", required: false} ] }
+          - label: "Bowls"
+            name: "bowls"
+            widget: "list"
+            hint: "Γιαούρτια, smoothies, κλπ."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. SMOOTHIE BOWL" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό (π.χ. 9.00)." }
+              - { label: "Περιγραφή", name: "description", widget: "text", required: false, hint: "Τι περιλαμβάνει το πιάτο." }
+              - { label: "Φωτογραφία", name: "image", widget: "image", required: false, hint: "Ανεβάστε μια καθαρή επαγγελματική φωτογραφία." }
+          
+          - label: "Egg Dishes"
+            name: "eggs"
+            widget: "list"
+            hint: "Πιάτα με βάση το αυγό."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. PULLED PORK BRIOCHE" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "text", required: false, hint: "Συστατικά του πιάτου." }
+              - { label: "Φωτογραφία", name: "image", widget: "image", required: false, hint: "Ανεβάστε φωτογραφία." }
+          
+          - label: "Savory Options"
+            name: "savory"
+            widget: "list"
+            hint: "Αλμυρές επιλογές (Sandwich, Μπρουσκέτες)."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. CLUB SANDWICH" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "text", required: false, hint: "Συστατικά του πιάτου." }
+              - { label: "Φωτογραφία", name: "image", widget: "image", required: false, hint: "Ανεβάστε φωτογραφία." }
+          
+          - label: "Sweet Options"
+            name: "sweet"
+            widget: "list"
+            hint: "Γλυκές επιλογές (Pancakes, Κρουασάν)."
+            fields:
+              - { label: "Όνομα", name: "title", widget: "string", hint: "π.χ. PANCAKES με πραλίνα" }
+              - { label: "Τιμή", name: "price", widget: "string", hint: "Βάλτε ΜΟΝΟ τον αριθμό." }
+              - { label: "Περιγραφή", name: "description", widget: "text", required: false, hint: "Συστατικά του πιάτου." }
+              - { label: "Φωτογραφία", name: "image", widget: "image", required: false, hint: "Ανεβάστε φωτογραφία." }
