@@ -346,6 +346,10 @@
         fetchMenuData();
 
         if (window.netlifyIdentity) {
+            window.netlifyIdentity.init({
+                APIUrl: "https://pavonemenu.netlify.app/.netlify/identity"
+            });
+            
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.netlifyIdentity.on("login", () => {
