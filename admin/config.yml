@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: gianniskoutz/pavone-menu
+  branch: main
+  base_url: https://pavone-cms-auth.digital-menu.workers.dev
+
+publish_mode: editorial_workflow
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "menu"
+    label: "Διαχείριση Καταλόγου"
+    files:
+      - label: "1. Ροφήματα & Ποτά"
+        name: "drinks"
+        file: "drinks.json"
+        fields:
+          - label: "Καφέδες (Coffee Menu)"
+            name: "coffee"
+            widget: "list"
+            hint: "Λίστα καφέδων και φρέσκων χυμών."
