@@ -2,7 +2,7 @@ backend:
   name: github
   repo: gianniskoutz/pavone-menu
   branch: main
-  base_url: https://pavone.digital-menu.workers.dev
+  base_url: pavone-cms-auth.digital-menu.workers.dev
   
 publish_mode: editorial_workflow
 
