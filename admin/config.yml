@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: gianniskoutz/pavone-menu
   branch: main
-  site_domain: pavonemenu.netlify.app
+  base_url: https://pavone.digital-menu.workers.dev
   
 publish_mode: editorial_workflow
 
