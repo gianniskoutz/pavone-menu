@@ -30,14 +30,14 @@ collections:
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
           - label: "CLASSIC COCKTAILS"
-            name: "classic_cocktails"
+            name: "classic"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
           - label: "SIGNATURE COCKTAILS"
-            name: "signature_cocktails"
+            name: "signature"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
@@ -58,15 +58,23 @@ collections:
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
           - label: "ΚΡΑΣΙΑ ΠΟΤΗΡΙ / WINES (GLASS)"
-            name: "wine_glass"
+            name: "wines_glass"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
           - label: "ΚΡΑΣΙΑ ΜΠΟΥΚΑΛΙ / WINES (BOTTLE)"
-            name: "wine_bottle"
+            name: "wines_bottle"
             widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "ΠΡΟΣΟΧΗ: ΛΑΘΟΣ ΚΑΤΗΓΟΡΙΑ (Άδειασέ την)"
+            name: "signature_cocktails"
+            widget: "list"
+            required: false
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
