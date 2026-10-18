@@ -39,9 +39,22 @@
     {
       "title": "ESPRESSO SINGLE/DOUBLE",
       "price": "3.0/3.9"
+    },
+    {
+      "title": "FREDDO ESPRESSO/TAKE AWAY",
+      "price": "3.8/2.6"
     }
   ],
-  "classic": [],
+  "classic": [
+    {
+      "title": "DAIQUIRI",
+      "price": "10"
+    },
+    {
+      "title": "MARGARITA",
+      "price": "10"
+    }
+  ],
   "signature": [
     {
       "title": "BLOOM",
@@ -54,7 +67,18 @@
       "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg"
     }
   ],
-  "spritz": [],
+  "spritz": [
+    {
+      "title": "MASTIC BLOOM",
+      "description": "Mastiha, cucumber, premium tonic water",
+      "price": "9"
+    },
+    {
+      "title": "APEROL SPRITZ",
+      "description": "Aperol, prosecco, grapefruit soda",
+      "price": "9"
+    }
+  ],
   "wines_bottle": [
     {
       "title": "ΛΕΥΚΟ (ΜΠΟΥΚΑΛΙ) / WHITE",
