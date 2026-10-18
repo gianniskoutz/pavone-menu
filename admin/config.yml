@@ -4,8 +4,6 @@ backend:
   branch: main
   base_url: https://pavone-cms-auth.digital-menu.workers.dev
 
-publish_mode: editorial_workflow
-
 media_folder: "images"
 public_folder: "/images"
 
@@ -22,7 +20,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
-              - {label: "Τιμή (π.χ. 3.0/3.8 €)", name: "price", widget: "string"}
+              - {label: "Τιμή", name: "price", widget: "string"}
           - label: "Spritz"
             name: "spritz"
             widget: "list"
