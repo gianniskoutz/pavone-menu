@@ -79,7 +79,8 @@
     {
       "title": "CLUB SANDWICH",
       "description": "Με παναρισμένο κοτόπουλο, ντομάτα, μπέικον, iceberg και μαγιονέζα - Fried chicken club sandwich with tomato, bacon, iceberg and mayonnaise ",
-      "price": "12"
+      "price": "12",
+      "image": "/images/club-sandwich-syntagi-960x880.jpg"
     },
     {
       "title": "ΜΠΡΟΥΣΚΕΤΑ",
