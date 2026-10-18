@@ -81,12 +81,12 @@
   ],
   "wines_bottle": [
     {
-      "title": "ΛΕΥΚΟ (ΜΠΟΥΚΑΛΙ) / WHITE",
+      "title": "BREAK THE GLASS ΛΕΥΚΟ ΞΗΡΟ",
       "price": "25"
     },
     {
-      "title": "ΚΟΚΚΙΝΟ (ΜΠΟΥΚΑΛΙ) / RED",
-      "price": "28"
+      "title": "MONOCEROS ΛΕΥΚΟ ΞΗΡΟ",
+      "price": "25"
     }
   ]
 }
