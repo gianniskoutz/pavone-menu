@@ -71,14 +71,6 @@ collections:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
-          - label: "ΠΡΟΣΟΧΗ: ΛΑΘΟΣ ΚΑΤΗΓΟΡΙΑ (Άδειασέ την)"
-            name: "signature_cocktails"
-            widget: "list"
-            required: false
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
 
       - label: "2. Brunch Menu (Φαγητό)"
         name: "food"
