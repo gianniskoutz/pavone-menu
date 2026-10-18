@@ -20,4 +20,18 @@ collections:
           - label: "Καφέδες (Coffee Menu)"
             name: "coffee"
             widget: "list"
-            hint: "Λίστα καφέδων και φρέσκων χυμών."
+            fields:
+              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Τιμή (π.χ. 3.0/3.8 €)", name: "price", widget: "string"}
+          - label: "Spritz"
+            name: "spritz"
+            widget: "list"
+            fields:
+              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "Classic Cocktails"
+            name: "cocktails"
+            widget: "list"
+            fields:
+              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Τιμή", name: "price", widget: "string"}
