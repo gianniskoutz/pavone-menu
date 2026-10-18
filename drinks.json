@@ -1,28 +1,65 @@
 {
   "coffee": [
-    { "title": "ESPRESSO SINGLE/DOUBLE", "price": "3.0/3.8" }
+    "Map { \"title\": \"ESPRESSO SINGLE/DOUBLE\"",
+    "\"price\": \"3.0/3.9\" }"
   ],
   "spritz": [],
   "classic": [],
   "signature": [
-    { "title": "BLOOM", "price": "12", "description": "Vodka, caramel, lime, pineapple, tonka bean bitters" },
-    { "title": "KARMA", "price": "11", "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg" }
+    {
+      "title": "BLOOM",
+      "price": "12",
+      "description": "Vodka, caramel, lime, pineapple, tonka bean bitters"
+    },
+    {
+      "title": "KARMA",
+      "price": "11",
+      "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg"
+    }
   ],
   "spirits": [
-    { "title": "SIMPLE", "price": "9" },
-    { "title": "SPECIAL", "price": "11" },
-    { "title": "PREMIUM", "price": "14" }
+    {
+      "title": "SIMPLE",
+      "price": "9"
+    },
+    {
+      "title": "SPECIAL",
+      "price": "11"
+    },
+    {
+      "title": "PREMIUM",
+      "price": "14"
+    }
   ],
   "beers": [
-    { "title": "CORONA", "price": "6", "description": "Mexican Lager" },
-    { "title": "STELLA ARTOIS", "price": "5" }
+    {
+      "title": "CORONA",
+      "price": "6",
+      "description": "Mexican Lager"
+    },
+    {
+      "title": "STELLA ARTOIS",
+      "price": "5"
+    }
   ],
   "wines_glass": [
-    { "title": "ΛΕΥΚΟ (ΠΟΤΗΡΙ) / WHITE", "price": "6" },
-    { "title": "ΚΟΚΚΙΝΟ (ΠΟΤΗΡΙ) / RED", "price": "7" }
+    {
+      "title": "ΛΕΥΚΟ (ΠΟΤΗΡΙ) / WHITE",
+      "price": "6"
+    },
+    {
+      "title": "ΚΟΚΚΙΝΟ (ΠΟΤΗΡΙ) / RED",
+      "price": "7"
+    }
   ],
   "wines_bottle": [
-    { "title": "ΛΕΥΚΟ (ΜΠΟΥΚΑΛΙ) / WHITE", "price": "25" },
-    { "title": "ΚΟΚΚΙΝΟ (ΜΠΟΥΚΑΛΙ) / RED", "price": "28" }
+    {
+      "title": "ΛΕΥΚΟ (ΜΠΟΥΚΑΛΙ) / WHITE",
+      "price": "25"
+    },
+    {
+      "title": "ΚΟΚΚΙΝΟ (ΜΠΟΥΚΑΛΙ) / RED",
+      "price": "28"
+    }
   ]
 }
