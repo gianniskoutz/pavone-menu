@@ -62,5 +62,41 @@
       "price": "10",
       "description": "με ζάχαρη, κανέλα, πραλίνα καραμέλας, κρόκαν και παγωτό βανίλια (Tsoureki French  toast with cinnamon sugar, caramel praline, almond brittle and vanilla ice cream)"
     }
+  ],
+  "egg_dishes": [
+    {
+      "title": "PULLED PORK BRIOCHE",
+      "description": "Με αυγό ποσέ, hollandaise και τραγανό κρεμμύδι - Pulled pork brioche with poached egg, hollandaise and crispy onion",
+      "price": "13"
+    },
+    {
+      "title": "BREAKFAST TACOS",
+      "description": "Με αυγά scrambled, ντοματίνια, αβοκάντο και καπνιστό σολομό - Breakfast tacos with scrambled eggs, cherry tomatoes, avocado and smoked salmon",
+      "price": "10"
+    }
+  ],
+  "savory_options": [
+    {
+      "title": "CLUB SANDWICH",
+      "description": "Με παναρισμένο κοτόπουλο, ντομάτα, μπέικον, iceberg και μαγιονέζα - Fried chicken club sandwich with tomato, bacon, iceberg and mayonnaise ",
+      "price": "12"
+    },
+    {
+      "title": "ΜΠΡΟΥΣΚΕΤΑ",
+      "description": "Με χούμους, μανιτάρια, ρόκα, τραγανό κρεμμύδι και dukkah - Bruschetta with sun-dried tomato hummus, mushrooms, crispy onion and dukkah",
+      "price": "9"
+    }
+  ],
+  "sweet_options": [
+    {
+      "title": "PANCAKES",
+      "description": "Με πραλίνα φουντουκιού, crumble αμυγδάλου και marshmallows - Pancakes with hazelnut praline, almond crumble and marshmallows",
+      "price": "9"
+    },
+    {
+      "title": "ΑΥΓΟΦΕΤΕΣ ΤΣΟΥΡΕΚΙΟΥ",
+      "description": "Με ζάχαρη, κανέλα, πραλίνα καραμέλας, κρόκαν και παγωτό βανίλια - Tsoureki French toast with cinnamon sugar, caramel praline, almond brittle and vanilla ice cream",
+      "price": "10"
+    }
   ]
 }
