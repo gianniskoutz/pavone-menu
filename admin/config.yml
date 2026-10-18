@@ -50,15 +50,22 @@ collections:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
-          - label: "BEERS / ΜΠΥΡΕΣ"
+          - label: "ΜΠΥΡΕΣ / BEERS"
             name: "beers"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
               - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
-          - label: "WINES / ΚΡΑΣΙΑ"
-            name: "wines"
+          - label: "ΚΡΑΣΙΑ ΠΟΤΗΡΙ / WINES (GLASS)"
+            name: "wine_glass"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "ΚΡΑΣΙΑ ΜΠΟΥΚΑΛΙ / WINES (BOTTLE)"
+            name: "wine_bottle"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
