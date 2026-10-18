@@ -15,21 +15,85 @@ collections:
         name: "drinks"
         file: "drinks.json"
         fields:
-          - label: "Καφέδες (Coffee Menu)"
+          - label: "COFFEE MENU"
             name: "coffee"
             widget: "list"
             fields:
-              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
-          - label: "Spritz"
+          - label: "SPRITZ"
             name: "spritz"
             widget: "list"
             fields:
-              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
-          - label: "Classic Cocktails"
-            name: "cocktails"
+          - label: "CLASSIC COCKTAILS"
+            name: "classic_cocktails"
             widget: "list"
             fields:
-              - {label: "Όνομα Προϊόντος", name: "title", widget: "string"}
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "SIGNATURE COCKTAILS"
+            name: "signature_cocktails"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "SPIRITS / ΠΟΤΑ"
+            name: "spirits"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "BEERS / ΜΠΥΡΕΣ"
+            name: "beers"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "WINES / ΚΡΑΣΙΑ"
+            name: "wines"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "string", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+
+      - label: "2. Brunch Menu (Φαγητό)"
+        name: "food"
+        file: "food.json"
+        fields:
+          - label: "BOWLS"
+            name: "bowls"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "EGG DISHES"
+            name: "egg_dishes"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "SAVORY OPTIONS"
+            name: "savory_options"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+          - label: "SWEET OPTIONS"
+            name: "sweet_options"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
               - {label: "Τιμή", name: "price", widget: "string"}
