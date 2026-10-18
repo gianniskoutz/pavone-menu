@@ -34,13 +34,7 @@
       "price": "7"
     }
   ],
-  "signature_cocktails": [
-    {
-      "title": "bloom",
-      "description": "frsytfhb,iyftesdfuhb,hcteughb",
-      "price": "12"
-    }
-  ],
+  "signature_cocktails": [],
   "coffee": [
     {
       "title": "ESPRESSO SINGLE/DOUBLE",
