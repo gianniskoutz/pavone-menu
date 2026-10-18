@@ -188,7 +188,6 @@
             border-bottom: none;
         }
         
-        /* ΝΕΟ: Εμφάνιση φωτογραφίας στα ποτά */
         .item-thumbnail {
             width: 70px;
             height: 70px;
@@ -223,6 +222,46 @@
             margin-top: -2px;
         }
 
+        .wine-note {
+            text-align: center;
+            margin-top: 25px;
+            padding: 20px 15px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .wine-note p {
+            margin: 6px 0;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 500;
+        }
+        .wine-note p:before {
+            content: "• ";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* ΝΕΟ: Στυλ για την ώρα του Brunch */
+        .brunch-time-wrapper {
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+        .brunch-time {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(111, 187, 162, 0.3);
+        }
+
     </style>
 </head>
 <body>
@@ -246,6 +285,10 @@
 
         <!-- FOOD SECTION -->
         <div id="section-food" class="menu-section">
+            <!-- ΠΡΟΣΘΗΚΗ: Το ωράριο του Brunch -->
+            <div class="brunch-time-wrapper">
+                <div class="brunch-time">9:00 – 15:00</div>
+            </div>
             <div id="food-container"></div>
         </div>
     </div>
@@ -321,6 +364,13 @@
                     renderDrinksCategory(drinksContainer, "Μπύρες / Beers", drinksData.beers);
                     renderDrinksCategory(drinksContainer, "Κρασιά Ποτήρι / Wines (Glass)", drinksData.wines_glass);
                     renderDrinksCategory(drinksContainer, "Κρασιά Μπουκάλι / Wines (Bottle)", drinksData.wines_bottle);
+
+                    drinksContainer.innerHTML += `
+                        <div class="wine-note">
+                            <p>Για την πλήρη λίστα κρασιών μας παρακαλώ ρωτήστε μας !</p>
+                            <p>More wine options available please ask us !</p>
+                        </div>
+                    `;
                 }
             } catch (e) { console.log("Αναμονή για δεδομένα ποτών..."); }
 
@@ -331,7 +381,6 @@
                 
                 if (foodRes.ok) {
                     const foodData = await foodRes.json();
-                    // ΔΙΟΡΘΩΣΗ: Πλέον ταυτίζεται με τα ονόματα στο CMS
                     renderFoodCategory(foodContainer, "Bowls", foodData.bowls);
                     renderFoodCategory(foodContainer, "Egg Dishes", foodData.egg_dishes);
                     renderFoodCategory(foodContainer, "Savory Options", foodData.savory_options);
