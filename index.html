@@ -285,7 +285,6 @@
     </div>
 
     <script>
-        // Αλλαγή Tab
         function switchTab(tabName) {
             document.querySelectorAll('.menu-section').forEach(section => section.classList.remove('active'));
             document.querySelectorAll('.nav-tabs button').forEach(button => button.classList.remove('active'));
@@ -294,32 +293,21 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Χαρτογράφηση των 8 κατηγοριών του CMS
-        const menuConfig = [
-            { id: 'coffee_beverages', title: 'Coffee / Beverages', target: 'drinks', type: 'simple', renderStyle: 'compact' },
-            { id: 'spritz', title: 'Spritz', target: 'drinks', type: 'simple', renderStyle: 'compact' },
-            { id: 'cocktails', title: 'Cocktails', target: 'drinks', type: 'simple', renderStyle: 'compact' },
-            { id: 'drinks_beers', title: 'Drinks / Beers', target: 'drinks', type: 'simple', renderStyle: 'compact' },
-            { id: 'wine_list', title: 'Wine List', target: 'drinks', type: 'complex', renderStyle: 'compact', subcategories: [
-                { key: 'glass', name: 'BY THE GLASS' },
-                { key: 'bottle', name: 'BY THE BOTTLE' }
-            ]},
-            { id: 'brunch', title: 'Brunch', target: 'food', type: 'complex', renderStyle: 'card', subcategories: [
-                { key: 'bowls', name: 'BOWLS' },
-                { key: 'egg_dishes', name: 'EGG DISHES' },
-                { key: 'savory_options', name: 'SAVORY OPTIONS' },
-                { key: 'sweet_options', name: 'SWEET OPTIONS' }
-            ]},
-            { id: 'sandwiches', title: 'Sandwiches', target: 'food', type: 'simple', renderStyle: 'card' },
-            { id: 'dinner', title: 'Dinner', target: 'food', type: 'simple', renderStyle: 'card' }
-        ];
+        // Συνάρτηση για τα ποτά (Compact List)
+        function renderDrinksCategory(container, title, items, isSubcategory = false) {
+            if (!items || items.length === 0) return;
+            
+            // Αν είναι υποκατηγορία (π.χ. By the Glass) το κάνουμε λίγο πιο διακριτικό, αλλιώς κανονικό title
+            if (!isSubcategory) {
+                container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            } else {
+                container.innerHTML += `<h4 style="text-align: center; color: var(--accent); margin-top: 15px;">- ${title} -</h4>`;
+            }
 
-        // Rendering για Compact στυλ (ποτά)
-        function renderCompactItems(items) {
-            let html = '<div class="compact-list">';
             items.forEach(item => {
-                if (item.hidden) return; // Έλεγχος απόκρυψης
-                html += `
+                if (item.hidden === true) return; 
+
+                container.innerHTML += `
                     <div class="compact-item">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}" class="item-thumbnail">` : ''}
                         <div>
@@ -330,16 +318,22 @@
                     </div>
                 `;
             });
-            html += '</div>';
-            return html;
         }
 
-        // Rendering για Card στυλ (φαγητό)
-        function renderCardItems(items) {
-            let html = '';
+        // Συνάρτηση για το φαγητό (Menu Card)
+        function renderFoodCategory(container, title, items, isSubcategory = false) {
+            if (!items || items.length === 0) return;
+            
+            if (!isSubcategory) {
+                container.innerHTML += `<h3 class="category-title">${title}</h3>`;
+            } else {
+                container.innerHTML += `<h4 style="text-align: center; color: var(--accent); margin-top: 15px;">- ${title} -</h4>`;
+            }
+
             items.forEach(item => {
-                if (item.hidden) return; // Έλεγχος απόκρυψης
-                html += `
+                if (item.hidden === true) return; 
+
+                container.innerHTML += `
                     <div class="menu-card">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
                         <div class="menu-card-content">
@@ -352,58 +346,82 @@
                     </div>
                 `;
             });
-            return html;
         }
 
-        // Κύρια συνάρτηση φόρτωσης δεδομένων
-        async function loadMenu() {
+        async function fetchMenuData() {
             const drinksContainer = document.getElementById('drinks-container');
             const foodContainer = document.getElementById('food-container');
+            
+            // Οι 8 κατηγορίες όπως τις όρισες στο config.yml
+            const categories = [
+                { id: 'coffee_beverages', file: '/coffee_beverages.json', target: 'drinks', title: 'Coffee / Beverages', type: 'simple' },
+                { id: 'spritz', file: '/spritz.json', target: 'drinks', title: 'Spritz', type: 'simple' },
+                { id: 'cocktails', file: '/cocktails.json', target: 'drinks', title: 'Cocktails', type: 'simple' },
+                { id: 'drinks_beers', file: '/drinks_beers.json', target: 'drinks', title: 'Drinks / Beers', type: 'simple' },
+                { id: 'wine_list', file: '/wine_list.json', target: 'drinks', title: 'Wine List', type: 'complex', subs: [
+                    {key: 'glass', name: 'BY THE GLASS'}, 
+                    {key: 'bottle', name: 'BY THE BOTTLE'}
+                ]},
+                { id: 'brunch', file: '/brunch.json', target: 'food', title: 'Brunch', type: 'complex', subs: [
+                    {key: 'bowls', name: 'BOWLS'}, 
+                    {key: 'egg_dishes', name: 'EGG DISHES'}, 
+                    {key: 'savory_options', name: 'SAVORY OPTIONS'}, 
+                    {key: 'sweet_options', name: 'SWEET OPTIONS'}
+                ]},
+                { id: 'sandwiches', file: '/sandwiches.json', target: 'food', title: 'Sandwiches', type: 'simple' },
+                { id: 'dinner', file: '/dinner.json', target: 'food', title: 'Dinner', type: 'simple' }
+            ];
 
-            for (const category of menuConfig) {
+            for (const cat of categories) {
                 try {
-                    const response = await fetch(`/${category.id}.json`);
-                    if (!response.ok) continue; 
-                    
-                    const data = await response.json();
-                    
-                    // 1. Έλεγχος Απόκρυψης Ολόκληρης της Κατηγορίας
+                    const res = await fetch(cat.file);
+                    if (!res.ok) continue;
+                    const data = await res.json();
+
+                    // 1. Έλεγχος απόκρυψης κατηγορίας
                     if (data.hidden) continue;
 
-                    let sectionHTML = `<h3 class="category-title">${category.title}</h3>`;
+                    const targetContainer = (cat.target === 'drinks') ? drinksContainer : foodContainer;
+                    const renderFunc = (cat.target === 'drinks') ? renderDrinksCategory : renderFoodCategory;
 
                     // 2. Έλεγχος Coming Soon
                     if (data.coming_soon) {
-                        sectionHTML += `<div class="coming-soon-badge">Coming Soon</div>`;
-                    } else {
-                        // 3. Εμφάνιση Προϊόντων
-                        if (category.type === 'simple' && data.items) {
-                            sectionHTML += category.renderStyle === 'compact' ? renderCompactItems(data.items) : renderCardItems(data.items);
-                        } else if (category.type === 'complex') {
-                            category.subcategories.forEach(sub => {
-                                if (data[sub.key] && data[sub.key].length > 0) {
-                                    sectionHTML += `<h3 style="text-align: center; margin-bottom: 10px; font-size: 15px;">${sub.name}</h3>`;
-                                    sectionHTML += category.renderStyle === 'compact' ? renderCompactItems(data[sub.key]) : renderCardItems(data[sub.key]);
-                                }
-                            });
-                        }
+                        targetContainer.innerHTML += `
+                            <h3 class="category-title">${cat.title}</h3>
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <span style="background-color: var(--accent); color: white; padding: 6px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; letter-spacing: 1px;">COMING SOON</span>
+                            </div>
+                        `;
+                        continue; // Σταματάει εδώ για αυτή την κατηγορία, δεν τυπώνει προϊόντα
                     }
 
-                    // Τοποθέτηση στο σωστό Tab
-                    if (category.target === 'drinks') {
-                        drinksContainer.innerHTML += sectionHTML;
-                    } else {
-                        foodContainer.innerHTML += sectionHTML;
+                    // 3. Κανονική εκτύπωση
+                    if (cat.type === 'simple') {
+                        renderFunc(targetContainer, cat.title, data.items);
+                    } else if (cat.type === 'complex') {
+                        targetContainer.innerHTML += `<h3 class="category-title">${cat.title}</h3>`;
+                        cat.subs.forEach(sub => {
+                            if (data[sub.key] && data[sub.key].length > 0) {
+                                renderFunc(targetContainer, sub.name, data[sub.key], true); // true = είναι υποκατηγορία
+                            }
+                        });
                     }
 
-                } catch (error) {
-                    console.log(`Αναμονή για δεδομένα της κατηγορίας: ${category.id}`);
+                } catch (e) {
+                    console.log(`Δεν βρέθηκε ακόμα το ${cat.file} - Αναμονή για δημιουργία στο CMS.`);
                 }
             }
+
+            // Προσθήκη της σημείωσης για τα κρασιά στο τέλος του drinksContainer
+            drinksContainer.innerHTML += `
+                <div class="wine-note">
+                    <p>Για την πλήρη λίστα κρασιών μας παρακαλώ ρωτήστε μας !</p>
+                    <p>More wine options available please ask us !</p>
+                </div>
+            `;
         }
 
-        // Εκκίνηση Φόρτωσης
-        loadMenu();
+        fetchMenuData();
     </script>
 </body>
 </html>
