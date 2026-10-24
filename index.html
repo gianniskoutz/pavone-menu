@@ -57,16 +57,22 @@
 
         .nav-tabs {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 12px;
-            padding: 20px;
+            padding: 15px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
             background-color: rgba(252, 251, 249, 0.95);
             backdrop-filter: blur(10px);
-            overflow-x: auto; /* Επιτρέπει σκρολάρισμα αν δεν χωράνε τα κουμπιά */
+            overflow-x: auto; /* Επιτρέπει σκρολάρισμα */
             white-space: nowrap;
+            /* Κρύβει το scrollbar οπτικά αλλά διατηρεί τη λειτουργία */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-tabs button {
@@ -82,6 +88,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            flex-shrink: 0; /* Αποτρέπει τη συμπίεση των κουμπιών */
         }
 
         .nav-tabs button.active {
@@ -123,14 +130,6 @@
         
         .category-title:first-child {
             margin-top: 5px;
-        }
-        
-        .empty-state {
-            text-align: center;
-            font-size: 13px;
-            color: #999;
-            margin-bottom: 20px;
-            font-style: italic;
         }
 
         .coming-soon-badge {
@@ -255,6 +254,28 @@
             margin-top: -2px;
         }
 
+        .wine-note {
+            text-align: center;
+            margin-top: 25px;
+            padding: 20px 15px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .wine-note p {
+            margin: 6px 0;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            font-style: italic;
+            font-weight: 500;
+        }
+        .wine-note p:before {
+            content: "• ";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -264,24 +285,28 @@
         <p>Premium Quality Menu</p>
     </div>
 
-    <!-- Κεντρικά Tabs -->
+    <!-- 8 Κεντρικά Tabs -->
     <div class="nav-tabs">
-        <button class="active" onclick="switchTab('drinks')">DRINKS & COFFEE</button>
-        <button onclick="switchTab('food')">FOOD MENU</button>
+        <button class="active" onclick="switchTab('coffee_beverages')">COFFEE & BEV</button>
+        <button onclick="switchTab('brunch')">BRUNCH</button>
+        <button onclick="switchTab('dinner')">DINNER</button>
+        <button onclick="switchTab('spritz')">SPRITZ</button>
+        <button onclick="switchTab('cocktails')">COCKTAILS</button>
+        <button onclick="switchTab('drinks_beers')">DRINKS & BEERS</button>
+        <button onclick="switchTab('wine_list')">WINE LIST</button>
+        <button onclick="switchTab('sandwiches')">SANDWICHES</button>
     </div>
 
+    <!-- 8 Ενότητες Μενού -->
     <div class="menu-container">
-        
-        <!-- DRINKS SECTION (Περιλαμβάνει Coffee, Spritz, Cocktails, Beers, Wine) -->
-        <div id="section-drinks" class="menu-section active">
-            <div id="drinks-container"></div>
-        </div>
-
-        <!-- FOOD SECTION (Περιλαμβάνει Brunch, Dinner, Sandwiches) -->
-        <div id="section-food" class="menu-section">
-            <div id="food-container"></div>
-        </div>
-        
+        <div id="section-coffee_beverages" class="menu-section active"><div id="container-coffee_beverages"></div></div>
+        <div id="section-brunch" class="menu-section"><div id="container-brunch"></div></div>
+        <div id="section-dinner" class="menu-section"><div id="container-dinner"></div></div>
+        <div id="section-spritz" class="menu-section"><div id="container-spritz"></div></div>
+        <div id="section-cocktails" class="menu-section"><div id="container-cocktails"></div></div>
+        <div id="section-drinks_beers" class="menu-section"><div id="container-drinks_beers"></div></div>
+        <div id="section-wine_list" class="menu-section"><div id="container-wine_list"></div></div>
+        <div id="section-sandwiches" class="menu-section"><div id="container-sandwiches"></div></div>
     </div>
 
     <script>
@@ -297,7 +322,6 @@
         function renderDrinksCategory(container, title, items, isSubcategory = false) {
             if (!items || items.length === 0) return;
             
-            // Αν είναι υποκατηγορία (π.χ. By the Glass) το κάνουμε λίγο πιο διακριτικό, αλλιώς κανονικό title
             if (!isSubcategory) {
                 container.innerHTML += `<h3 class="category-title">${title}</h3>`;
             } else {
@@ -349,27 +373,24 @@
         }
 
         async function fetchMenuData() {
-            const drinksContainer = document.getElementById('drinks-container');
-            const foodContainer = document.getElementById('food-container');
-            
-            // Οι 8 κατηγορίες όπως τις όρισες στο config.yml
+            // Δομή των 8 κατηγοριών. Το style ορίζει αν τυπώνονται σαν ποτά (compact) ή φαγητό (card).
             const categories = [
-                { id: 'coffee_beverages', file: '/coffee_beverages.json', target: 'drinks', title: 'Coffee / Beverages', type: 'simple' },
-                { id: 'spritz', file: '/spritz.json', target: 'drinks', title: 'Spritz', type: 'simple' },
-                { id: 'cocktails', file: '/cocktails.json', target: 'drinks', title: 'Cocktails', type: 'simple' },
-                { id: 'drinks_beers', file: '/drinks_beers.json', target: 'drinks', title: 'Drinks / Beers', type: 'simple' },
-                { id: 'wine_list', file: '/wine_list.json', target: 'drinks', title: 'Wine List', type: 'complex', subs: [
-                    {key: 'glass', name: 'BY THE GLASS'}, 
-                    {key: 'bottle', name: 'BY THE BOTTLE'}
-                ]},
-                { id: 'brunch', file: '/brunch.json', target: 'food', title: 'Brunch', type: 'complex', subs: [
+                { id: 'coffee_beverages', file: '/coffee_beverages.json', style: 'compact', title: 'Coffee / Beverages', type: 'simple' },
+                { id: 'brunch', file: '/brunch.json', style: 'card', title: 'Brunch', type: 'complex', subs: [
                     {key: 'bowls', name: 'BOWLS'}, 
                     {key: 'egg_dishes', name: 'EGG DISHES'}, 
                     {key: 'savory_options', name: 'SAVORY OPTIONS'}, 
                     {key: 'sweet_options', name: 'SWEET OPTIONS'}
                 ]},
-                { id: 'sandwiches', file: '/sandwiches.json', target: 'food', title: 'Sandwiches', type: 'simple' },
-                { id: 'dinner', file: '/dinner.json', target: 'food', title: 'Dinner', type: 'simple' }
+                { id: 'dinner', file: '/dinner.json', style: 'card', title: 'Dinner', type: 'simple' },
+                { id: 'spritz', file: '/spritz.json', style: 'compact', title: 'Spritz', type: 'simple' },
+                { id: 'cocktails', file: '/cocktails.json', style: 'compact', title: 'Cocktails', type: 'simple' },
+                { id: 'drinks_beers', file: '/drinks_beers.json', style: 'compact', title: 'Drinks / Beers', type: 'simple' },
+                { id: 'wine_list', file: '/wine_list.json', style: 'compact', title: 'Wine List', type: 'complex', subs: [
+                    {key: 'glass', name: 'BY THE GLASS'}, 
+                    {key: 'bottle', name: 'BY THE BOTTLE'}
+                ]},
+                { id: 'sandwiches', file: '/sandwiches.json', style: 'card', title: 'Sandwiches', type: 'simple' }
             ];
 
             for (const cat of categories) {
@@ -378,47 +399,44 @@
                     if (!res.ok) continue;
                     const data = await res.json();
 
-                    // 1. Έλεγχος απόκρυψης κατηγορίας
                     if (data.hidden) continue;
 
-                    const targetContainer = (cat.target === 'drinks') ? drinksContainer : foodContainer;
-                    const renderFunc = (cat.target === 'drinks') ? renderDrinksCategory : renderFoodCategory;
+                    const targetContainer = document.getElementById(`container-${cat.id}`);
+                    const renderFunc = (cat.style === 'compact') ? renderDrinksCategory : renderFoodCategory;
 
-                    // 2. Έλεγχος Coming Soon
                     if (data.coming_soon) {
                         targetContainer.innerHTML += `
                             <h3 class="category-title">${cat.title}</h3>
-                            <div style="text-align: center; margin-bottom: 20px;">
-                                <span style="background-color: var(--accent); color: white; padding: 6px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; letter-spacing: 1px;">COMING SOON</span>
-                            </div>
+                            <div class="coming-soon-badge">COMING SOON</div>
                         `;
-                        continue; // Σταματάει εδώ για αυτή την κατηγορία, δεν τυπώνει προϊόντα
+                        continue; 
                     }
 
-                    // 3. Κανονική εκτύπωση
                     if (cat.type === 'simple') {
                         renderFunc(targetContainer, cat.title, data.items);
                     } else if (cat.type === 'complex') {
                         targetContainer.innerHTML += `<h3 class="category-title">${cat.title}</h3>`;
                         cat.subs.forEach(sub => {
                             if (data[sub.key] && data[sub.key].length > 0) {
-                                renderFunc(targetContainer, sub.name, data[sub.key], true); // true = είναι υποκατηγορία
+                                renderFunc(targetContainer, sub.name, data[sub.key], true);
                             }
                         });
                     }
 
+                    // Προσθήκη σημείωσης μόνο στην κατηγορία κρασιού
+                    if (cat.id === 'wine_list') {
+                        targetContainer.innerHTML += `
+                            <div class="wine-note">
+                                <p>Για την πλήρη λίστα κρασιών μας παρακαλώ ρωτήστε μας !</p>
+                                <p>More wine options available please ask us !</p>
+                            </div>
+                        `;
+                    }
+
                 } catch (e) {
-                    console.log(`Δεν βρέθηκε ακόμα το ${cat.file} - Αναμονή για δημιουργία στο CMS.`);
+                    console.log(`Αναμονή για ${cat.file}`);
                 }
             }
-
-            // Προσθήκη της σημείωσης για τα κρασιά στο τέλος του drinksContainer
-            drinksContainer.innerHTML += `
-                <div class="wine-note">
-                    <p>Για την πλήρη λίστα κρασιών μας παρακαλώ ρωτήστε μας !</p>
-                    <p>More wine options available please ask us !</p>
-                </div>
-            `;
         }
 
         fetchMenuData();
