@@ -5,7 +5,7 @@
       "price": "9",
       "description": "με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής - with almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits",
       "image": "",
-      "hidden": true
+      "hidden": false
     },
     {
       "title": "CHIA BOWL",
