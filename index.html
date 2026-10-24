@@ -11,9 +11,9 @@
 
     <style>
         :root {
-            --primary: #2b594a;  /* Βαθύ πράσινο από την τοιχογραφία */
---accent: #c45a3a;   /* Κεραμιδί από τα μαξιλάρια/λογότυπο */
---bg-color: #f4f1ea; /* Θερμό λευκό/μπεζ της πέτρας */
+            --primary: #2b594a;  /* Βαθύ πράσινο */
+            --accent: #c45a3a;   /* Κεραμιδί */
+            --bg-color: #f4f1ea; /* Θερμό λευκό/μπεζ */
             --card-bg: #ffffff;
             --text-main: #333333;
             --text-muted: #666666;
@@ -65,41 +65,45 @@
             z-index: 100;
             background-color: rgba(252, 251, 249, 0.95);
             backdrop-filter: blur(10px);
+            overflow-x: auto; /* Επιτρέπει σκρολάρισμα αν δεν χωράνε τα κουμπιά */
+            white-space: nowrap;
         }
-        /* Το κουμπί όταν ΔΕΝ είναι πατημένο (ανενεργό - π.χ. Κεραμιδί) */
-.nav-tabs button {
-    background-color: var(--accent); 
-    border: none;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #ffffff; /* <--- Μόνιμα λευκά γράμματα */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
 
-/* Το κουμπί όταν ΕΙΝΑΙ πατημένο (ενεργό - π.χ. Πράσινο) */
-.nav-tabs button.active {
-    background-color: var(--primary);
-    color: #ffffff; /* <--- Λευκά γράμματα και στο ενεργό */
-}
+        .nav-tabs button {
+            background-color: var(--accent); 
+            border: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #ffffff; 
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-tabs button.active {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
 
         .menu-container {
             max-width: 600px;
             margin: 0 auto;
             padding: 15px 20px 60px 20px;
         }
+        
         .menu-section {
             display: none;
             animation: slideFadeUp 0.4s ease-out forwards;
         }
+        
         .menu-section.active {
             display: block;
         }
+        
         @keyframes slideFadeUp {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
@@ -116,6 +120,7 @@
             border-bottom: 2px solid var(--accent);
             padding-bottom: 8px;
         }
+        
         .category-title:first-child {
             margin-top: 5px;
         }
@@ -128,6 +133,20 @@
             font-style: italic;
         }
 
+        .coming-soon-badge {
+            text-align: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: table;
+            margin: 20px auto;
+            letter-spacing: 1px;
+        }
+
+        /* Στυλ για τις κάρτες φαγητού (Food/Brunch/Dinner) */
         .menu-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -136,21 +155,25 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.04);
             border: 1px solid rgba(0,0,0,0.02);
         }
+        
         .menu-card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
             display: block;
         }
+        
         .menu-card-content {
             padding: 22px;
         }
+        
         .menu-card-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 8px;
         }
+        
         .menu-card-header h3 {
             margin: 0;
             font-family: 'Playfair Display', serif;
@@ -160,11 +183,13 @@
             padding-right: 15px;
             line-height: 1.2;
         }
+        
         .menu-card-header strong {
             color: var(--primary);
             font-size: 17px;
             font-weight: 600;
         }
+        
         .product-desc {
             font-size: 14px;
             color: var(--text-muted);
@@ -172,12 +197,14 @@
             margin: 0;
         }
 
+        /* Στυλ για τις λίστες ποτών (Compact List) */
         .compact-list {
             background: var(--card-bg);
             padding: 10px 22px;
             border-radius: 16px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.04);
         }
+        
         .compact-item {
             display: flex;
             justify-content: space-between;
@@ -186,6 +213,7 @@
             border-bottom: 1px solid #f0f0f0;
             gap: 15px;
         }
+        
         .compact-item:last-child {
             border-bottom: none;
         }
@@ -202,6 +230,7 @@
         .compact-item > div {
             flex: 1; 
         }
+        
         .compact-item h4 {
             margin: 0 0 4px 0;
             font-family: 'Inter', sans-serif;
@@ -209,12 +238,14 @@
             color: var(--text-main);
             font-weight: 600;
         }
+        
         .compact-item p {
             margin: 0;
             font-size: 13px;
             color: var(--text-muted);
             line-height: 1.4;
         }
+        
         .compact-item strong {
             color: var(--primary);
             font-size: 16px;
@@ -224,76 +255,37 @@
             margin-top: -2px;
         }
 
-        .wine-note {
-            text-align: center;
-            margin-top: 25px;
-            padding: 20px 15px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            border: 1px solid rgba(0,0,0,0.03);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-        }
-        .wine-note p {
-            margin: 6px 0;
-            font-size: 13.5px;
-            color: var(--text-muted);
-            font-style: italic;
-            font-weight: 500;
-        }
-        .wine-note p:before {
-            content: "• ";
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .brunch-time-wrapper {
-            text-align: center;
-            margin: 10px 0 20px 0;
-        }
-        .brunch-time {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            padding: 6px 20px;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(111, 187, 162, 0.3);
-        }
-
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="/images/logo.png" alt="Pavone Syros Logo" class="main-logo">
+        <img src="/images/logo.png" alt="Pavone Logo" class="main-logo">
         <p>Premium Quality Menu</p>
     </div>
 
-    <!-- Τα δύο βασικά Tabs -->
+    <!-- Κεντρικά Tabs -->
     <div class="nav-tabs">
-        <button class="active" onclick="switchTab('coffee')">DRINKS & COFFEE</button>
-        <button onclick="switchTab('food')">BRUNCH MENU</button>
+        <button class="active" onclick="switchTab('drinks')">DRINKS & COFFEE</button>
+        <button onclick="switchTab('food')">FOOD MENU</button>
     </div>
 
     <div class="menu-container">
-        <!-- DRINKS SECTION -->
-        <div id="section-coffee" class="menu-section active">
-            <div id="drinks-container" class="compact-list"></div>
+        
+        <!-- DRINKS SECTION (Περιλαμβάνει Coffee, Spritz, Cocktails, Beers, Wine) -->
+        <div id="section-drinks" class="menu-section active">
+            <div id="drinks-container"></div>
         </div>
 
-        <!-- FOOD SECTION -->
+        <!-- FOOD SECTION (Περιλαμβάνει Brunch, Dinner, Sandwiches) -->
         <div id="section-food" class="menu-section">
-            <div class="brunch-time-wrapper">
-                <div class="brunch-time">9:00 – 15:00</div>
-            </div>
             <div id="food-container"></div>
         </div>
+        
     </div>
 
     <script>
+        // Αλλαγή Tab
         function switchTab(tabName) {
             document.querySelectorAll('.menu-section').forEach(section => section.classList.remove('active'));
             document.querySelectorAll('.nav-tabs button').forEach(button => button.classList.remove('active'));
@@ -302,19 +294,32 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function renderDrinksCategory(container, title, items) {
-            container.innerHTML += `<h3 class="category-title">${title}</h3>`;
-            
-            if (!items || items.length === 0) {
-                container.innerHTML += `<p class="empty-state">Προσθέστε είδη από το Admin...</p>`;
-                return;
-            }
-            
-            items.forEach(item => {
-                // ΕΛΕΓΧΟΣ ΑΠΟΚΡΥΨΗΣ: Αν το hidden είναι true, αγνοεί το προϊόν
-                if (item.hidden === true) return; 
+        // Χαρτογράφηση των 8 κατηγοριών του CMS
+        const menuConfig = [
+            { id: 'coffee_beverages', title: 'Coffee / Beverages', target: 'drinks', type: 'simple', renderStyle: 'compact' },
+            { id: 'spritz', title: 'Spritz', target: 'drinks', type: 'simple', renderStyle: 'compact' },
+            { id: 'cocktails', title: 'Cocktails', target: 'drinks', type: 'simple', renderStyle: 'compact' },
+            { id: 'drinks_beers', title: 'Drinks / Beers', target: 'drinks', type: 'simple', renderStyle: 'compact' },
+            { id: 'wine_list', title: 'Wine List', target: 'drinks', type: 'complex', renderStyle: 'compact', subcategories: [
+                { key: 'glass', name: 'BY THE GLASS' },
+                { key: 'bottle', name: 'BY THE BOTTLE' }
+            ]},
+            { id: 'brunch', title: 'Brunch', target: 'food', type: 'complex', renderStyle: 'card', subcategories: [
+                { key: 'bowls', name: 'BOWLS' },
+                { key: 'egg_dishes', name: 'EGG DISHES' },
+                { key: 'savory_options', name: 'SAVORY OPTIONS' },
+                { key: 'sweet_options', name: 'SWEET OPTIONS' }
+            ]},
+            { id: 'sandwiches', title: 'Sandwiches', target: 'food', type: 'simple', renderStyle: 'card' },
+            { id: 'dinner', title: 'Dinner', target: 'food', type: 'simple', renderStyle: 'card' }
+        ];
 
-                container.innerHTML += `
+        // Rendering για Compact στυλ (ποτά)
+        function renderCompactItems(items) {
+            let html = '<div class="compact-list">';
+            items.forEach(item => {
+                if (item.hidden) return; // Έλεγχος απόκρυψης
+                html += `
                     <div class="compact-item">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}" class="item-thumbnail">` : ''}
                         <div>
@@ -325,21 +330,16 @@
                     </div>
                 `;
             });
+            html += '</div>';
+            return html;
         }
 
-        function renderFoodCategory(container, title, items) {
-            container.innerHTML += `<h3 class="category-title">${title}</h3>`;
-            
-            if (!items || items.length === 0) {
-                container.innerHTML += `<p class="empty-state">Προσθέστε είδη από το Admin...</p>`;
-                return;
-            }
-            
+        // Rendering για Card στυλ (φαγητό)
+        function renderCardItems(items) {
+            let html = '';
             items.forEach(item => {
-                // ΕΛΕΓΧΟΣ ΑΠΟΚΡΥΨΗΣ: Αν το hidden είναι true, αγνοεί το προϊόν
-                if (item.hidden === true) return; 
-
-                container.innerHTML += `
+                if (item.hidden) return; // Έλεγχος απόκρυψης
+                html += `
                     <div class="menu-card">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
                         <div class="menu-card-content">
@@ -352,48 +352,58 @@
                     </div>
                 `;
             });
+            return html;
         }
 
-       async function fetchMenuData() {
-            try {
-                const drinksRes = await fetch('/drinks.json');
-                const drinksContainer = document.getElementById('drinks-container');
-                
-                if (drinksRes.ok) {
-                    const drinksData = await drinksRes.json();
-                    renderDrinksCategory(drinksContainer, "Coffee Menu", drinksData.coffee);
-                    renderDrinksCategory(drinksContainer, "Spritz", drinksData.spritz);
-                    renderDrinksCategory(drinksContainer, "Classic Cocktails", drinksData.classic);
-                    renderDrinksCategory(drinksContainer, "Signature Cocktails", drinksData.signature);
-                    renderDrinksCategory(drinksContainer, "Spirits / Ποτά", drinksData.spirits);
-                    renderDrinksCategory(drinksContainer, "Μπύρες / Beers", drinksData.beers);
-                    renderDrinksCategory(drinksContainer, "Κρασιά Ποτήρι / Wines (Glass)", drinksData.wines_glass);
-                    renderDrinksCategory(drinksContainer, "Κρασιά Μπουκάλι / Wines (Bottle)", drinksData.wines_bottle);
+        // Κύρια συνάρτηση φόρτωσης δεδομένων
+        async function loadMenu() {
+            const drinksContainer = document.getElementById('drinks-container');
+            const foodContainer = document.getElementById('food-container');
 
-                    drinksContainer.innerHTML += `
-                        <div class="wine-note">
-                            <p>Για την πλήρη λίστα κρασιών μας παρακαλώ ρωτήστε μας !</p>
-                            <p>More wine options available please ask us !</p>
-                        </div>
-                    `;
-                }
-            } catch (e) { console.log("Αναμονή για δεδομένα ποτών..."); }
+            for (const category of menuConfig) {
+                try {
+                    const response = await fetch(`/${category.id}.json`);
+                    if (!response.ok) continue; 
+                    
+                    const data = await response.json();
+                    
+                    // 1. Έλεγχος Απόκρυψης Ολόκληρης της Κατηγορίας
+                    if (data.hidden) continue;
 
-            try {
-                const foodRes = await fetch('/food.json');
-                const foodContainer = document.getElementById('food-container');
-                
-                if (foodRes.ok) {
-                    const foodData = await foodRes.json();
-                    renderFoodCategory(foodContainer, "Bowls", foodData.bowls);
-                    renderFoodCategory(foodContainer, "Egg Dishes", foodData.egg_dishes);
-                    renderFoodCategory(foodContainer, "Savory Options", foodData.savory_options);
-                    renderFoodCategory(foodContainer, "Sweet Options", foodData.sweet_options);
+                    let sectionHTML = `<h3 class="category-title">${category.title}</h3>`;
+
+                    // 2. Έλεγχος Coming Soon
+                    if (data.coming_soon) {
+                        sectionHTML += `<div class="coming-soon-badge">Coming Soon</div>`;
+                    } else {
+                        // 3. Εμφάνιση Προϊόντων
+                        if (category.type === 'simple' && data.items) {
+                            sectionHTML += category.renderStyle === 'compact' ? renderCompactItems(data.items) : renderCardItems(data.items);
+                        } else if (category.type === 'complex') {
+                            category.subcategories.forEach(sub => {
+                                if (data[sub.key] && data[sub.key].length > 0) {
+                                    sectionHTML += `<h3 style="text-align: center; margin-bottom: 10px; font-size: 15px;">${sub.name}</h3>`;
+                                    sectionHTML += category.renderStyle === 'compact' ? renderCompactItems(data[sub.key]) : renderCardItems(data[sub.key]);
+                                }
+                            });
+                        }
+                    }
+
+                    // Τοποθέτηση στο σωστό Tab
+                    if (category.target === 'drinks') {
+                        drinksContainer.innerHTML += sectionHTML;
+                    } else {
+                        foodContainer.innerHTML += sectionHTML;
+                    }
+
+                } catch (error) {
+                    console.log(`Αναμονή για δεδομένα της κατηγορίας: ${category.id}`);
                 }
-            } catch (e) { console.log("Αναμονή για δεδομένα φαγητού..."); }
+            }
         }
 
-        fetchMenuData();
+        // Εκκίνηση Φόρτωσης
+        loadMenu();
     </script>
 </body>
 </html>
