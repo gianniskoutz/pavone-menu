@@ -311,6 +311,9 @@
             }
             
             items.forEach(item => {
+                // ΕΛΕΓΧΟΣ ΑΠΟΚΡΥΨΗΣ: Αν το hidden είναι true, αγνοεί το προϊόν
+                if (item.hidden === true) return; 
+
                 container.innerHTML += `
                     <div class="compact-item">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}" class="item-thumbnail">` : ''}
@@ -333,6 +336,9 @@
             }
             
             items.forEach(item => {
+                // ΕΛΕΓΧΟΣ ΑΠΟΚΡΥΨΗΣ: Αν το hidden είναι true, αγνοεί το προϊόν
+                if (item.hidden === true) return; 
+
                 container.innerHTML += `
                     <div class="menu-card">
                         ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
