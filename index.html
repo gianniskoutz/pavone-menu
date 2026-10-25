@@ -374,7 +374,7 @@
 
         async function fetchMenuData() {
             // Δομή των 8 κατηγοριών. Το style ορίζει αν τυπώνονται σαν ποτά (compact) ή φαγητό (card).
-                        const categories = [
+                                    const categories = [
                 { id: 'coffee_beverages', file: '/coffee_beverages.json', style: 'compact', title: 'Coffee / Beverages', type: 'simple' },
                 { id: 'brunch', file: '/brunch.json', style: 'card', title: 'Brunch', type: 'complex', subs: [
                     {key: 'bowls', name: 'BOWLS'}, 
@@ -384,7 +384,10 @@
                 ]},
                 { id: 'dinner', file: '/dinner.json', style: 'card', title: 'Dinner', type: 'simple' },
                 { id: 'spritz', file: '/spritz.json', style: 'compact', title: 'Spritz', type: 'simple' },
-                { id: 'cocktails', file: '/cocktails.json', style: 'compact', title: 'Cocktails', type: 'simple' },
+                { id: 'cocktails', file: '/cocktails.json', style: 'compact', title: 'Cocktails', type: 'complex', subs: [
+                    {key: 'classic', name: 'CLASSIC COCKTAILS'},
+                    {key: 'signature', name: 'SIGNATURE COCKTAILS'}
+                ]},
                 { id: 'drinks_beers', file: '/drinks_beers.json', style: 'compact', title: 'Drinks / Beers', type: 'complex', subs: [
                     {key: 'drinks', name: 'DRINKS'},
                     {key: 'beers', name: 'BEERS'}
@@ -395,6 +398,7 @@
                 ]},
                 { id: 'sandwiches', file: '/sandwiches.json', style: 'card', title: 'Sandwiches', type: 'simple' }
             ];
+
 
 
             for (const cat of categories) {
