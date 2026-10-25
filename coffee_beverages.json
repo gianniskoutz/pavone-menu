@@ -2,13 +2,68 @@
   "items": [
     {
       "hidden": false,
+      "title": "ESPRESSO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.0/3.8"
+    },
+    {
+      "hidden": false,
+      "title": "ESPRESSO LUNGO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.0/3.8"
+    },
+    {
+      "hidden": false,
       "title": "FREDDO ESPRESSO/TAKE AWAY",
       "price": "3.0/3.8"
     },
     {
       "hidden": false,
-      "title": "ESPRESSO",
+      "title": "CAPUCCINO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.5/3.8"
+    },
+    {
+      "hidden": false,
+      "title": "COLD BREW",
+      "price": "4.5"
+    },
+    {
+      "hidden": false,
+      "title": "FLAT WHITE",
       "price": "3.8"
+    },
+    {
+      "hidden": false,
+      "title": "AMERICANO SINGLE/DOUBLE",
+      "price": "3.0/3.8"
+    },
+    {
+      "hidden": false,
+      "title": "FILTER COFFEE (ΓΑΛΛΙΚΟΣ)",
+      "price": "4.3"
+    },
+    {
+      "hidden": false,
+      "title": "GREEK COFFEE SINGLE/DOUBLE-ΕΛΛΗΝΙΚΟΣ ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "2.5/3.5"
+    },
+    {
+      "hidden": false,
+      "title": "NESCAFE",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "CHOCOLATE HOT/COLD-ΣΟΚΟΛΑΤΑ ΖΕΣΤΗ/ΚΡΥΑ",
+      "price": "4.5"
+    },
+    {
+      "hidden": false,
+      "title": "HOT TEA-ΖΕΣΤΟ ΤΣΑΙ",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "FRESH ORANGE JUICE-ΦΥΣΙΚΟΣ ΧΥΜΟΣ ΠΟΡΤΟΚΑΛΙ",
+      "price": "4"
     }
   ]
 }
