@@ -108,8 +108,17 @@ collections:
         fields:
           - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
           - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
-          - label: "Προϊόντα"
-            name: "items"
+          - label: "CLASSIC COCKTAILS"
+            name: "classic"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+          - label: "SIGNATURE COCKTAILS"
+            name: "signature"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
