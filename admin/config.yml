@@ -118,7 +118,7 @@ collections:
               - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
               - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
 
-            - label: "6. Drinks / Beers"
+      - label: "6. Drinks / Beers"
         name: "drinks_beers"
         file: "drinks_beers.json"
         fields:
