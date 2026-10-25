@@ -118,14 +118,23 @@ collections:
               - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
               - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
 
-      - label: "6. Drinks / Beers"
+            - label: "6. Drinks / Beers"
         name: "drinks_beers"
         file: "drinks_beers.json"
         fields:
           - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
           - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
-          - label: "Προϊόντα"
-            name: "items"
+          - label: "DRINKS"
+            name: "drinks"
+            widget: "list"
+            fields:
+              - {label: "Όνομα", name: "title", widget: "string"}
+              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+              - {label: "Τιμή", name: "price", widget: "string"}
+              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+          - label: "BEERS"
+            name: "beers"
             widget: "list"
             fields:
               - {label: "Όνομα", name: "title", widget: "string"}
