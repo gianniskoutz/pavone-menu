@@ -15,5 +15,39 @@
       "title": "MAMOS",
       "price": "6"
     }
+  ],
+  "drinks": [
+    {
+      "hidden": false,
+      "title": "SIMPLE",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "SPECIAL",
+      "price": "11"
+    },
+    {
+      "hidden": false,
+      "title": "PREMIUM",
+      "price": "14"
+    }
+  ],
+  "beers": [
+    {
+      "hidden": false,
+      "title": "CORONA",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "STELLA ARTOIS",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "MAMOS",
+      "price": "6"
+    }
   ]
 }
