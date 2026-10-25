@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "hidden": false,
+      "title": "BLOOM",
+      "description": "Vodka, caramel, lime, pineapple, tonka bean bitters",
+      "price": "12"
+    },
+    {
+      "hidden": false,
+      "title": "KARMA",
+      "description": "Gin, mastic, cherry, lime, mandarine, nutmeg",
+      "price": "11"
+    },
+    {
+      "hidden": false,
+      "title": "LADY IN RED",
+      "description": "Gin, strawberry, lime, bubblegum, syrup, bitters",
+      "price": "12"
+    },
+    {
+      "hidden": false,
+      "title": "BLUBERRY KISS",
+      "description": "Dark, rum, coconut, lime, blueberry, bitters, ginger beer",
+      "price": "13"
+    }
+  ]
+}
