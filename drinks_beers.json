@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "hidden": false,
+      "title": "CORONA",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "STELLA ARTOIS",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "MAMOS",
+      "price": "6"
+    }
+  ]
+}
