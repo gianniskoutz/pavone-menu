@@ -1,0 +1,51 @@
+{
+  "glass": [
+    {
+      "hidden": false,
+      "title": "ΛΕΥΚΟ  ΞΗΡΟ ΠΟΤΗΡΙ",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "ΚΟΚΚΙΝΟ ΞΗΡΟ ΠΟΤΗΡΙ",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "ΡΟΖΕ ΗΜΙΓΛΥΚΟ",
+      "price": "7"
+    }
+  ],
+  "bottle": [
+    {
+      "hidden": false,
+      "title": "BREAK THE GLASS ΛΕΥΚΟ ΞΗΡΟ",
+      "price": "25"
+    },
+    {
+      "hidden": false,
+      "title": "MONOCEROS ΛΕΥΚΟ ΞΗΡΟ",
+      "price": "25"
+    },
+    {
+      "hidden": false,
+      "title": "SAUVIGNON 100%",
+      "price": "35"
+    },
+    {
+      "hidden": false,
+      "title": "MONOCEROS ΚΟΚΚΙΝΟ ΞΗΡΟ",
+      "price": "25"
+    },
+    {
+      "hidden": false,
+      "title": "ΑΙΩΝΑΣ ΡΟΖΕ ΒΙΟΛΟΓΙΚΟ ΞΗΡΟ",
+      "price": "30"
+    },
+    {
+      "hidden": false,
+      "title": "ANASTASIA ΡΟΖΕ ΗΜΙΓΛΥΚΟ",
+      "price": "30"
+    }
+  ]
+}
