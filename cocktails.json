@@ -24,5 +24,73 @@
       "description": "Dark, rum, coconut, lime, blueberry, bitters, ginger beer",
       "price": "13"
     }
+  ],
+  "classic": [
+    {
+      "hidden": false,
+      "title": "DAIQUIRI",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "MARGARITA",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "CAIPIRINHA",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "MOHITO",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "OLD FASHIONED",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "PORNSTAR",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "PALOMA",
+      "price": "11"
+    },
+    {
+      "hidden": false,
+      "title": "NEGRONI",
+      "price": "11"
+    }
+  ],
+  "signature": [
+    {
+      "hidden": false,
+      "title": "BLOOM",
+      "description": "Vodka, caramel, lime, pineapple, tonka, bean bitters",
+      "price": "12"
+    },
+    {
+      "hidden": false,
+      "title": "KARMA",
+      "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg",
+      "price": "11"
+    },
+    {
+      "hidden": false,
+      "title": "LADY IN RED",
+      "description": "Gin, strawberry, lime, bubblegum, syrup, bitters",
+      "price": "12"
+    },
+    {
+      "hidden": false,
+      "title": "BLUEBERRY KISS",
+      "description": "Dark rum, coconut, lime, blueberry, bitters, ginger beer",
+      "price": "13"
+    }
   ]
 }
