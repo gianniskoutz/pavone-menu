@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "hidden": false,
+      "title": "MASTIC BLOOM",
+      "description": "Mastiha, cucumber, premium tonic water",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "APEROL SPRITZ",
+      "description": "Aperol, prosecco, grapefruit soda",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "CAMPARI SPRITZ",
+      "description": "Campari, prosecco, soda",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "2409 BARCELONA",
+      "description": "Gin, prosecco, basil, grapefruit soda",
+      "price": "10"
+    }
+  ]
+}
