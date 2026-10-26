@@ -17,13 +17,18 @@
     },
     {
       "hidden": false,
+      "title": "FREDDO CAPUCCINO/TAKE AWAY",
+      "price": "4/2.60"
+    },
+    {
+      "hidden": false,
       "title": "CAPUCCINO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
       "price": "3.5/3.8"
     },
     {
       "hidden": false,
       "title": "COLD BREW",
-      "price": "4.5"
+      "price": "5"
     },
     {
       "hidden": false,
@@ -38,7 +43,7 @@
     {
       "hidden": false,
       "title": "FILTER COFFEE (ΓΑΛΛΙΚΟΣ)",
-      "price": "4.3"
+      "price": "4.5"
     },
     {
       "hidden": false,
@@ -47,7 +52,7 @@
     },
     {
       "hidden": false,
-      "title": "NESCAFE",
+      "title": "NESCAFE HOT/ NESCAFE FRAPPE",
       "price": "3.5"
     },
     {
@@ -58,12 +63,30 @@
     {
       "hidden": false,
       "title": "HOT TEA-ΖΕΣΤΟ ΤΣΑΙ",
-      "price": "3.5"
+      "price": "3.5/4.5",
+      "description": "-Ρωτήστε μας για την ποικιλία στις γεύσεις τσαγιού μας\n-Ask us about our selection of tea flavours "
     },
     {
       "hidden": false,
       "title": "FRESH ORANGE JUICE-ΦΥΣΙΚΟΣ ΧΥΜΟΣ ΠΟΡΤΟΚΑΛΙ",
       "price": "4"
+    },
+    {
+      "hidden": false,
+      "title": "FRESH MIXED FRUIT JUICE/ΦΥΣΙΚΟΣ ΧΥΜΟΣ ΑΝΑΜΕΙΚΤΟΣ",
+      "price": "5"
+    },
+    {
+      "hidden": true,
+      "title": "HOMEMADE LEMONADE/ΣΠΙΤΙΚΗ ΛΕΜΟΝΑΔΑ",
+      "description": "-Με ginger/Βύσιννο/φραουλάδα με δυόσμο/Λεμονάδα με grapefruit\n-With ginger/sour cherry/strawberry and spearmint/pink lemonade with grapefruit",
+      "price": "5"
+    },
+    {
+      "hidden": false,
+      "title": "ICED TEA",
+      "description": "-Πράσινο τσάι με λεμόνι/Μαύρο τσάι με ροδάκινο\n-Green tea with lemon/Black tea with peach",
+      "price": "5"
     }
   ]
 }
