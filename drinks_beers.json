@@ -48,6 +48,16 @@
       "hidden": false,
       "title": "MAMOS",
       "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "ALFA",
+      "price": "5"
+    },
+    {
+      "hidden": false,
+      "title": "STELLA ARTOIS 0% ",
+      "price": "6"
     }
   ]
 }
