@@ -3,25 +3,25 @@
     {
       "hidden": false,
       "title": "SMOOTHIE BOWL",
-      "description": "-Με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής\n - With almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits.",
+      "description": "-Με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής\n\n - With almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits.",
       "price": "9"
     },
     {
       "hidden": false,
       "title": "CHIA BOWL",
       "price": "8",
-      "description": "-Με γιαούρτι, φρούτα εποχής, αμύγδαλα, ινδοκάρυδο και σπόρους chia \n- With yogurt, seasonal fruits, almonds, shredded coconut and chia seeds"
+      "description": "-Με γιαούρτι, φρούτα εποχής, αμύγδαλα, ινδοκάρυδο και σπόρους chia \n\n- With yogurt, seasonal fruits, almonds, shredded coconut and chia seeds"
     },
     {
       "hidden": false,
       "title": "CHOCO PEANUT CRUNCH",
-      "description": "-Γιαούρτι, τραγανή γκρανόλα, μπανάνα, φυστικοβούτυρο, μέλι και κομματια σοκολάτας \n- Greek yogurt, granola, banana, peanut butter, honey and chocolate ",
+      "description": "-Γιαούρτι, τραγανή γκρανόλα, μπανάνα, φυστικοβούτυρο, μέλι και κομματια σοκολάτας \n\n- Greek yogurt, granola, banana, peanut butter, honey and chocolate ",
       "price": "8.5"
     },
     {
       "hidden": false,
       "title": "RED BERRY BOWL ",
-      "description": "-Γιαούρτι, γκρανόλα με κόκκινα φρούτα, φράουλες, μύρτιλα και μέλι\n-Yogurt with red berry granola,strawberries, blueberries and honey",
+      "description": "-Γιαούρτι, γκρανόλα με κόκκινα φρούτα, φράουλες, μύρτιλα και μέλι\n\n-Yogurt with red berry granola,strawberries, blueberries and honey",
       "price": "8.5"
     }
   ],
