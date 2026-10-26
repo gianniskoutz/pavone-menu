@@ -3,19 +3,25 @@
     {
       "hidden": false,
       "title": "SMOOTHIE BOWL",
-      "description": "Με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής - With almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits.",
+      "description": "-Με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής\n - With almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits.",
       "price": "9"
     },
     {
       "hidden": false,
       "title": "CHIA BOWL",
       "price": "8",
-      "description": "Με γιαούρτι, φρούτα εποχής, αμύγδαλα, ινδοκάρυδο και σπόρους chia - With yogurt, seasonal fruits, almonds, shredded coconut and chia seeds"
+      "description": "-Με γιαούρτι, φρούτα εποχής, αμύγδαλα, ινδοκάρυδο και σπόρους chia \n- With yogurt, seasonal fruits, almonds, shredded coconut and chia seeds"
     },
     {
       "hidden": false,
       "title": "CHOCO PEANUT CRUNCH",
-      "description": "Ελληνικό γιαούρτι, τραγανή γκρανόλα, μπανάνα, φυστικοβούτυρο, μέλι και κανέλα - Greek yogurt, granola, banana, peanut butter, honey and drops of chocolate",
+      "description": "-Γιαούρτι, τραγανή γκρανόλα, μπανάνα, φυστικοβούτυρο, μέλι και κομματια σοκολάτας \n- Greek yogurt, granola, banana, peanut butter, honey and chocolate ",
+      "price": "8.5"
+    },
+    {
+      "hidden": false,
+      "title": "RED BERRY BOWL ",
+      "description": "-Γιαούρτι, γκρανόλα με κόκκινα φρούτα, φράουλες, μύρτιλα και μέλι\n-Yogurt with red berry granola,strawberries, blueberries and honey",
       "price": "8.5"
     }
   ],
@@ -23,24 +29,102 @@
     {
       "hidden": false,
       "title": "PULLED PORK BRIOCHE",
-      "description": "Με αυγό ποσέ, hollandaise και τραγανό κρεμμύδι - Pulled pork brioche with poached egg, hollandaise and crispy onion",
+      "description": "-Ψωμι brioche με pulled pork, αυγά ποσέ, σάλτσα hollandaise και τραγανό κρεμμύδι \n*Συνοδεύεται από σαλάτα \n- Pulled pork brioche with poached eggs, hollandaise sauce and crispy onion\n*Served with a side of salad",
       "price": "13"
+    },
+    {
+      "hidden": false,
+      "title": "BREAKFAST TACOS ",
+      "description": "-Τορτίγιες με αυγά scrambled, ντοματίνια, αβοκάντο και καπνιστό σολομό\n-Soft shell tortillas with scrambled eggs, cherry tomatoes, avocado and smoked salmon ",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "SCRAMBLED EGGS",
+      "description": "-Ψωμί brioche με scrambled eggs, απάκι κοτόπουλο, chutney πιπεριάς φλωρίνης και τραγανό κρεμμύδι\n*Συνοδεύεται από σαλάτα\n-Brioche with scrambled eggs, smoked chicken, sweet red pepper chutney and crispy onion \n*Served with a side of salad",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "FRITATA",
+      "description": "-Ομελέτα με τηγανητές πατάτες, φέτα, ντοματίνια, ελιές και ρίγανη\n-Omelette with french fries, feta, cherry tomatoes, olives and oregano ",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "AVOCADO OMELETTE/ΟΜΕΛΕΤΑ ΜΕ ΑΒΟΚΑΝΤΟ",
+      "description": "-Ομελέτα με αβοκάντο, καπνιστή γαλοπούλα και παρμεζάνα\n*Συνοδεύεται από σαλάτα \n-Omelette with avocado, smoked turkey and parmesan cheese \n*Served with a side salad ",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "ΑΥΓΑ ΠΟΣΕ/POACHED EGGS",
+      "description": "-Αυγά ποσέ πάνω σε γιαούρτι με μυρωδικά και λάδι τσίλι\n*Συνοδεύεται με φρυγανισμένο ψωμί \n-Poached eggs over herb yogurt with chili oil \n*Served with a side of bread",
+      "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": "SHAKSOUKA",
+      "description": "-Αυγά μάτια σε σάλτσα ντομάτας με φέτα και ρίγανη \n*Συνοδεύεται με φρυγανισμένο ψωμί \n-Eggs cooked in tomato sauce, feta and oregano\n*Served with a side of bread",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "CROQUE MADAME ",
+      "description": "-Με μπεσαμέλ, γραβιέρα Σύρου, καπνιστό ζαμπόν και τηγανητό αυγό\n*Συνοδεύεται από σαλάτα\n-With bechamel sauce, syros graviera, smoked ham topped with a fried egg\n*Served with a side of salad",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "PANCAKES ",
+      "description": "-Pancakes με παναρισμένο κοτόπουλο, μπέικον, σως τσένταρ, παρμεζάνα και τηγανητό αυγό\n-Pancakes with fried chicken, bacon, cheddar sauce and parmesan cheese topped with a fried egg",
+      "price": "12"
     }
   ],
   "savory_options": [
     {
       "hidden": false,
       "title": "CLUB SANDWICH",
-      "description": "Με παναρισμένο κοτόπουλο, ντομάτα, μπέικον, iceberg και μαγιονέζα - Fried chicken club sandwich with tomato, bacon, iceberg and mayonnaise ",
+      "description": "-Με παναρισμένο κοτόπουλο, ντομάτα, μπέικον, iceberg και μαγιονέζα \n*Συνοδεύεται από πατάτες\n- With Fried chicken, tomato, bacon, iceberg and mayonnaise \n*Served with a side of french fries",
       "price": "12"
+    },
+    {
+      "hidden": false,
+      "description": "-Προζυμένιο ψωμί με κρέμα αβοκάντο, κινόα με αμύγδαλα και goji berries \n*Συνοδεύεται με σαλάτα\n-Sourdough bread with avocado cream, quinoa with almonds and goji berries\n*Served with a side salad ",
+      "title": "AVO SUPER FOOD",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "BRUSCHETTA",
+      "description": "-Προζυμένιο ψωμί με χούμους λιαστής τομάτας, μανιτάρια, τραγανό κρεμμύδι και dukkah (μείγμα μπαχαρικών) *Συνοδεύεται με σαλάτα\n-Sourdough bread with sun-dried tomato hummus, mushrooms, crispy onion and dukkah (spice mix)",
+      "price": "9"
     }
   ],
   "sweet_options": [
     {
       "hidden": false,
       "title": "PANCAKES",
-      "description": "Με πραλίνα φουντουκιού, crumble αμυγδάλου και marshmallows - Pancakes with hazelnut praline, almond crumble and marshmallows",
+      "description": "-Με πραλίνα φουντουκιού, crumble αμυγδάλου και marshmallows\n - Pancakes with hazelnut praline, almond crumble and marshmallows",
       "price": "9"
+    },
+    {
+      "hidden": false,
+      "title": " TSOUREKI FRENCH TOAST/ΑΥΓΟΦΕΤΕΣ ΤΣΟΥΡΕΚΙΟΥ",
+      "description": "-Αυγόφετες τσουρεκιού με ζάχαρη και κανέλα, πραλίνα καραμέλας, crumble αμυγδάλου και παγωτό βανίλια\n-Tsoureki french toast with cinnamon sugar, caramel praline, almond crumble and vanilla ice cream",
+      "price": "10"
+    },
+    {
+      "hidden": false,
+      "title": "CROISSANT PISTACHE",
+      "description": "-Κρουασάν βουτύρου με βελούδινη κρέμα patisserie, πραλίνα φυστικιού, crumble αμυγδάλου και παγωτό βανίλια \n-Butter croissant with patisserie cream, pistachio praline, almond crumble and vanilla ice cream",
+      "price": "9.5"
+    },
+    {
+      "hidden": false,
+      "title": "DESSERT OF THE DAY/ΓΛΥΚΟ ΗΜΕΡΑΣ ",
+      "description": "-Ρωτήστε μας για την σημερινή επιλογή!\n-Ask us about today's selection!",
+      "price": "4,5-6,5"
     }
   ]
 }
