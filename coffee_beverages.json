@@ -87,6 +87,31 @@
       "title": "ICED TEA",
       "description": "-Πράσινο τσάι με λεμόνι/Μαύρο τσάι με ροδάκινο\n-Green tea with lemon/Black tea with peach",
       "price": "5"
+    },
+    {
+      "hidden": false,
+      "title": "COCA COLA/COCA COLA ZERO 250ML",
+      "price": "3"
+    },
+    {
+      "hidden": false,
+      "title": "3 CENTS GRAPEFRUIT SODA  200ML",
+      "price": "4.5"
+    },
+    {
+      "hidden": false,
+      "title": "LE TRIBUTE GINGER BEER 200ML",
+      "price": "4.5"
+    },
+    {
+      "hidden": false,
+      "title": "SPARKLING WATER 330ML",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "WATER/ΝΕΡΟ 500ML",
+      "price": "0.50"
     }
   ]
 }
