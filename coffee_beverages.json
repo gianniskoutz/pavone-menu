@@ -13,12 +13,22 @@
     {
       "hidden": false,
       "title": "FREDDO ESPRESSO/TAKE AWAY",
-      "price": "3.0/3.8"
+      "price": "3.8/2.6"
     },
     {
       "hidden": false,
       "title": "FREDDO CAPUCCINO/TAKE AWAY",
       "price": "4/2.60"
+    },
+    {
+      "hidden": false,
+      "title": "4πλο FREDDO ESPRESSO/DOUBLE SHOT FREDDO ESPRESSO",
+      "price": "6"
+    },
+    {
+      "hidden": false,
+      "title": "ICED LATTE/HOT LATTE",
+      "price": "4.5"
     },
     {
       "hidden": false,
@@ -63,7 +73,7 @@
     {
       "hidden": false,
       "title": "HOT TEA-ΖΕΣΤΟ ΤΣΑΙ",
-      "price": "3.5/4.5",
+      "price": "3.5/4",
       "description": "-Ρωτήστε μας για την ποικιλία στις γεύσεις τσαγιού μας\n-Ask us about our selection of tea flavours "
     },
     {
