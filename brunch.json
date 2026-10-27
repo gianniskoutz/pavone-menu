@@ -1,7 +1,7 @@
 {
   "bowls": [
     {
-      "hidden": false,
+      "hidden": true,
       "title": "SMOOTHIE BOWL",
       "description": "-Με γάλα αμυγδάλου, παγωμένα μούρα, μπανάνα, σπόρους chia, ινδοκάρυδο και φρούτα εποχής\n\n - With almond milk, frozen berries, banana, chia seeds, shredded coconut and seasonal fruits.",
       "price": "9"
@@ -89,7 +89,7 @@
       "price": "12"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "description": "-Προζυμένιο ψωμί με κρέμα αβοκάντο, κινόα με αμύγδαλα και goji berries \n*Συνοδεύεται με σαλάτα\n-Sourdough bread with avocado cream, quinoa with almonds and goji berries\n*Served with a side salad ",
       "title": "AVO SUPER FOOD",
       "price": "10"
