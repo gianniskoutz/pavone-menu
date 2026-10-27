@@ -2,16 +2,6 @@
   "items": [
     {
       "hidden": false,
-      "title": "ESPRESSO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3.0/3.8"
-    },
-    {
-      "hidden": false,
-      "title": "ESPRESSO LUNGO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
-      "price": "3.0/3.8"
-    },
-    {
-      "hidden": false,
       "title": "FREDDO ESPRESSO/TAKE AWAY",
       "price": "3.8/2.6"
     },
@@ -27,6 +17,16 @@
     },
     {
       "hidden": false,
+      "title": "ESPRESSO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.0/3.8"
+    },
+    {
+      "hidden": false,
+      "title": "ESPRESSO LUNGO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
+      "price": "3.0/3.8"
+    },
+    {
+      "hidden": false,
       "title": "ICED LATTE/HOT LATTE",
       "price": "4.5"
     },
@@ -34,11 +34,6 @@
       "hidden": false,
       "title": "CAPUCCINO SINGLE/DOUBLE-ΜΟΝΟΣ/ΔΙΠΛΟΣ",
       "price": "3.5/3.8"
-    },
-    {
-      "hidden": false,
-      "title": "COLD BREW",
-      "price": "5"
     },
     {
       "hidden": false,
@@ -68,13 +63,24 @@
     {
       "hidden": false,
       "title": "CHOCOLATE HOT/COLD-ΣΟΚΟΛΑΤΑ ΖΕΣΤΗ/ΚΡΥΑ",
-      "price": "4.5"
+      "price": "4"
+    },
+    {
+      "hidden": false,
+      "title": "COLD BREW",
+      "price": "5"
     },
     {
       "hidden": false,
       "title": "HOT TEA-ΖΕΣΤΟ ΤΣΑΙ",
-      "price": "3.5/4",
-      "description": "-Ρωτήστε μας για την ποικιλία στις γεύσεις τσαγιού μας\n-Ask us about our selection of tea flavours "
+      "price": "3.5",
+      "description": ""
+    },
+    {
+      "hidden": false,
+      "title": "FLAVOURED TEA BY TEA ROUTE/ΤΣΑΙ ΜΕ ΓΕΥΣΕΙΣ ",
+      "description": "-Santa's cookies:πράσινο τσάι, πραλίνα, σοκολάτα (green tea, praline, chocolate)\n-Φθινοπωρινή Σονάτα:μαύρο τσάι, βανίλια, φουντούκι (Autumn Sonata:black tea, vanilla, hazelnut)\n-Chun Mei:Πράσινο τσάι Κίνας (Chinese green tea)\n-Άνθος της Πέτρας:πράσινο τσάι, μάνγκο, βερίκοκο (Jade Flower:green tea, mango, apricot)",
+      "price": "4"
     },
     {
       "hidden": false,
@@ -112,6 +118,26 @@
       "hidden": false,
       "title": "LE TRIBUTE GINGER BEER 200ML",
       "price": "4.5"
+    },
+    {
+      "hidden": false,
+      "title": "SPRITE 250ML",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "FANTA ORANGE/ΠΟΡΤΟΚΑΛΑΔΑ FANTA",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "FANTA BLUE/ΠΟΡΤΟΚΑΛΑΔΑ FANTA ΧΩΡΙΣ ΑΝΘΡΑΚΙΚΟ",
+      "price": "3.5"
+    },
+    {
+      "hidden": false,
+      "title": "FANTA LEMONADE/FANTA ΛΕΜΟΝΙΤΑ",
+      "price": "3.5"
     },
     {
       "hidden": false,
