@@ -295,6 +295,62 @@
             letter-spacing: 1px;
         }
 
+        /* Νέο πλαίσιο για τα Extras του Καφέ */
+        .coffee-extras-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            border-left: 4px solid var(--primary);
+        }
+        .coffee-extras-box h4 {
+            color: var(--primary);
+            margin: 0 0 15px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .extras-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .extras-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 14px;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            border-bottom: 1px solid #f4f1ea;
+            padding-bottom: 12px;
+            gap: 15px;
+        }
+        .extras-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .extras-list .extras-text {
+            flex: 1;
+        }
+        .extras-list .extras-en {
+            display: block;
+            font-size: 12px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .extras-list .price {
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
     </style>
 </head>
 <body>
@@ -318,7 +374,39 @@
 
     <!-- 8 Ενότητες Μενού -->
     <div class="menu-container">
-        <div id="section-coffee_beverages" class="menu-section active"><div id="container-coffee_beverages"></div></div>
+        
+        <div id="section-coffee_beverages" class="menu-section active">
+            <div id="container-coffee_beverages"></div>
+            
+            <!-- Προσθήκη του Extras Box μόνο στην ενότητα των καφέδων -->
+            <div class="coffee-extras-box">
+                <h4>Extras / Επιπλεον</h4>
+                <ul class="extras-list">
+                    <li>
+                        <div class="extras-text">
+                            Φυτικό γάλα (βρώμης & αμυγδάλου)
+                            <span class="extras-en">Plant-based milk (oat & almond)</span>
+                        </div>
+                        <span class="price">+0.30 €</span>
+                    </li>
+                    <li>
+                        <div class="extras-text">
+                            Ντεκαφεϊνέ
+                            <span class="extras-en">Decaf</span>
+                        </div>
+                        <span class="price">+0.30 €</span>
+                    </li>
+                    <li>
+                        <div class="extras-text">
+                            Επιπλέον σιρόπι (καραμέλα, βανίλια, φουντούκι κ.ά.)
+                            <span class="extras-en">Extra syrup (caramel, vanilla, hazelnut etc.)</span>
+                        </div>
+                        <span class="price">+0.50 €</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div id="section-brunch" class="menu-section"><div id="container-brunch"></div></div>
         <div id="section-dinner" class="menu-section"><div id="container-dinner"></div></div>
         <div id="section-spritz" class="menu-section"><div id="container-spritz"></div></div>
@@ -398,7 +486,7 @@
 
         async function fetchMenuData() {
             // Δομή των 8 κατηγοριών. Το style ορίζει αν τυπώνονται σαν ποτά (compact) ή φαγητό (card).
-                                    const categories = [
+            const categories = [
                 { id: 'coffee_beverages', file: '/coffee_beverages.json', style: 'compact', title: 'Coffee / Beverages', type: 'simple' },
                 { id: 'brunch', file: '/brunch.json', style: 'card', title: 'Brunch', type: 'complex', subs: [
                     {key: 'bowls', name: 'BOWLS'}, 
@@ -422,8 +510,6 @@
                 ]},
                 { id: 'sandwiches', file: '/sandwiches.json', style: 'card', title: 'Sandwiches', type: 'simple' }
             ];
-
-
 
             for (const cat of categories) {
                 try {
