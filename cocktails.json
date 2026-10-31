@@ -75,7 +75,7 @@
       "price": "12"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "KARMA",
       "description": "Gin, mastiha, cherry, lime, mandarine, nutmeg",
       "price": "11"
