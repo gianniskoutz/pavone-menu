@@ -354,23 +354,29 @@
         }
 
         .brunch-hours {
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent); /* Το κεραμιδί του Pavone */
-    margin: -10px 0 25px 0; /* Το τοποθετεί ιδανικά κάτω από τον τίτλο, πριν τα πιάτα */
-    border: 1px solid rgba(196, 90, 58, 0.2);
     display: table;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 6px 16px;
-    border-radius: 20px;
-    background-color: rgba(196, 90, 58, 0.03);
+    margin: -5px auto 30px auto;
+    padding: 8px 22px;
+    background-color: var(--card-bg); 
+    color: var(--primary); 
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
 }
 
+/* Προσθέτει αυτόματα το εικονίδιο ρολογιού πριν το κείμενο */
+.brunch-hours::before {
+    content: "🕒"; 
+    margin-right: 8px;
+    font-size: 14px;
+    vertical-align: text-bottom;
+}
 
     </style>
 </head>
