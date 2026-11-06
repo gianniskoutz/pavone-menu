@@ -102,67 +102,69 @@ collections:
               - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
               - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
 
-      - label: "5. Cocktails"
-        name: "cocktails"
-        file: "cocktails.json"
-        fields:
-          - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
-          - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
-          - label: "CLASSIC COCKTAILS"
-            name: "classic"
-            widget: "list"
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
-              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
-          - label: "SIGNATURE COCKTAILS"
-            name: "signature"
-            widget: "list"
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
-              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+                    - label: "5. Cocktails"
+                name: "cocktails"
+                file: "cocktails.json"
+                fields:
+                  - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
+                  - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
+                  
+                  - label: "CLASSIC COCKTAILS"
+                    name: "classic"
+                    widget: "list"
+                    fields:
+                      - {label: "Όνομα", name: "title", widget: "string"}
+                      - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+                      - {label: "Τιμή", name: "price", widget: "string"}
+                      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+                      - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+                  
+                  - label: "SIGNATURE COCKTAILS"
+                    name: "signature"
+                    widget: "list"
+                    fields:
+                      - {label: "Όνομα", name: "title", widget: "string"}
+                      - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+                      - {label: "Τιμή", name: "price", widget: "string"}
+                      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+                      - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
 
-            - label: "6. Drinks / Beers"
-        name: "drinks_beers"
-        file: "drinks_beers.json"
-        fields:
-          - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
-          - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
-          
-          - label: "DRINKS"
-            name: "drinks"
-            widget: "list"
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
-              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
-          
-          - label: "WHISKEY"
-            name: "whiskey"
-            widget: "list"
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
-              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
-          
-          - label: "BEERS"
-            name: "beers"
-            widget: "list"
-            fields:
-              - {label: "Όνομα", name: "title", widget: "string"}
-              - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
-              - {label: "Τιμή", name: "price", widget: "string"}
-              - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
-              - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+              - label: "6. Drinks / Beers"
+                name: "drinks_beers"
+                file: "drinks_beers.json"
+                fields:
+                  - {label: "Απόκρυψη Κατηγορίας", name: "hidden", widget: "boolean", default: false, required: false}
+                  - {label: "Coming Soon", name: "coming_soon", widget: "boolean", default: false, required: false}
+                  
+                  - label: "DRINKS"
+                    name: "drinks"
+                    widget: "list"
+                    fields:
+                      - {label: "Όνομα", name: "title", widget: "string"}
+                      - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+                      - {label: "Τιμή", name: "price", widget: "string"}
+                      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+                      - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+                  
+                  - label: "WHISKEY"
+                    name: "whiskey"
+                    widget: "list"
+                    fields:
+                      - {label: "Όνομα", name: "title", widget: "string"}
+                      - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+                      - {label: "Τιμή", name: "price", widget: "string"}
+                      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+                      - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
+                  
+                  - label: "BEERS"
+                    name: "beers"
+                    widget: "list"
+                    fields:
+                      - {label: "Όνομα", name: "title", widget: "string"}
+                      - {label: "Συστατικά / Περιγραφή", name: "description", widget: "text", required: false}
+                      - {label: "Τιμή", name: "price", widget: "string"}
+                      - {label: "Φωτογραφία", name: "image", widget: "image", required: false}
+                      - {label: "Απόκρυψη Προϊόντος", name: "hidden", widget: "boolean", default: false, required: false}
 
       - label: "7. Wine List"
         name: "wine_list"
