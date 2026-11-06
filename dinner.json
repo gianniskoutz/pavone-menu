@@ -1,36 +1,41 @@
 {
-  "coming_soon": true,
+  "coming_soon": false,
   "items": [
     {
       "hidden": false,
       "title": "NACHOS",
       "description": "-Τραγανά nachos με κιμά τσίλι κον κάρνε και γουακαμόλε -  (crispy nachos with chilli con carne ground beef and guacamole)",
-      "price": "13"
+      "price": "11"
     },
     {
       "hidden": false,
       "title": "PATATAS BRAVAS ",
-      "price": "."
+      "price": "9.5.",
+      "description": "-Τραγανές πατάτες με σάλτσα brava με miso και aioli ψητού σκόρδου \n-Crispy potatoes with miso brava sauce and roasted garlic aioli"
     },
     {
       "hidden": false,
-      "title": "TACOS",
-      "price": "."
+      "title": "SMASH BEEF TACOS",
+      "price": "11",
+      "description": "-Τάκος με smashed μοσχάρι με καπνιστές νότες, τσένταρ, μαγιονέζα gochujang, iceberg, ντομάτα και jalapeno\n-Smash beef tacos with smoky seasoning, cheddar,gochujang mayo, iceberg lettuce, tomato and jalapeno"
     },
     {
       "hidden": false,
-      "title": "BURRATA",
-      "price": "."
+      "title": "BURRATA FOCACCIA",
+      "price": "12.5",
+      "description": "-Φοκάτσια με μπουράτα, ντοματίνια confit, ρόκα, πίκλα κρεμμυδιού, κρέμα βαλσάμικου και μέλι με σκόρδο\n-Focaccia with burrata, cofit cherry tomatoes, rocket, pickled onion, balsamic glaze and garlic honey  "
     },
     {
       "hidden": false,
-      "title": "CRISPY SUSHI RICE ",
-      "price": "."
+      "title": "PULLED PORK CRISPY RICE ",
+      "price": "13.5",
+      "description": "-Τραγανό ρύζι σούσι με σιγομαγειρεμένο pulled pork, καπνιστή μαγιονέζα, πίκλα πράσινου μήλου και jalapeno, τραγανό κρεμμύδι και σχινόπρασο\n-Crispy sushi rice topped with pulled pork, smoky mayo, green apple and jalapeno pickle, crispy onion and chives"
     },
     {
       "hidden": false,
-      "title": "PANCETA SKEWERS ",
-      "price": "."
+      "title": "PORK BELLY KUSHIYAKI",
+      "price": "12",
+      "description": "-Σουβλάκια πανσέτας στη σχάρα με ιαπωνικό γλάσο tare, chimichurri, μαγιονέζα και αγγούρι τουρσί\n-Grilled pork belly skewers with Japanese tare glaze, chimichurri, mayo and pickled cucumber "
     }
   ]
 }
