@@ -353,6 +353,25 @@
             white-space: nowrap;
         }
 
+        .brunch-hours {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent); /* Το κεραμιδί του Pavone */
+    margin: -10px 0 25px 0; /* Το τοποθετεί ιδανικά κάτω από τον τίτλο, πριν τα πιάτα */
+    border: 1px solid rgba(196, 90, 58, 0.2);
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background-color: rgba(196, 90, 58, 0.03);
+}
+
+
     </style>
 </head>
 <body>
@@ -409,7 +428,11 @@
             </div>
         </div>
 
-        <div id="section-brunch" class="menu-section"><div id="container-brunch"></div></div>
+        <div id="section-brunch" class="menu-section">
+    <div class="brunch-hours">09:00 - 15:00 </div>
+    <div id="container-brunch"></div>
+</div>
+
         <div id="section-dinner" class="menu-section"><div id="container-dinner"></div></div>
         <div id="section-spritz" class="menu-section"><div id="container-spritz"></div></div>
         <div id="section-cocktails" class="menu-section"><div id="container-cocktails"></div></div>
