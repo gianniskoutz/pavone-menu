@@ -1,3 +1,36 @@
 {
-  "coming_soon": true
+  "coming_soon": true,
+  "items": [
+    {
+      "hidden": false,
+      "title": "NACHOS",
+      "description": "-Τραγανά nachos με κιμά τσίλι κον κάρνε και γουακαμόλε -  (crispy nachos with chilli con carne ground beef and guacamole)",
+      "price": "13"
+    },
+    {
+      "hidden": false,
+      "title": "PATATAS BRAVAS ",
+      "price": "."
+    },
+    {
+      "hidden": false,
+      "title": "TACOS",
+      "price": "."
+    },
+    {
+      "hidden": false,
+      "title": "BURRATA",
+      "price": "."
+    },
+    {
+      "hidden": false,
+      "title": "CRISPY SUSHI RICE ",
+      "price": "."
+    },
+    {
+      "hidden": false,
+      "title": "PANCETA SKEWERS ",
+      "price": "."
+    }
+  ]
 }
