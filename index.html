@@ -567,6 +567,12 @@
                         renderFunc(targetContainer, cat.title, data.items);
                     } else if (cat.type === 'complex') {
                         targetContainer.innerHTML += `<h3 class="category-title">${cat.title}</h3>`;
+
+// Αν η κατηγορία είναι το brunch, πρόσθεσε το ωράριο από κάτω
+if (cat.id === 'brunch') {
+    targetContainer.innerHTML += `<div class="brunch-hours">καθημερινα / daily: 09:00 - 15:00</div>`;
+}
+
                         cat.subs.forEach(sub => {
                             if (data[sub.key] && data[sub.key].length > 0) {
                                 renderFunc(targetContainer, sub.name, data[sub.key], true);
