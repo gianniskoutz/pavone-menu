@@ -57,7 +57,7 @@
       "price": "9"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "ΑΥΓΑ ΠΟΣΕ/POACHED EGGS",
       "description": "-Αυγά ποσέ πάνω σε γιαούρτι με μυρωδικά και λάδι τσίλι\n*Συνοδεύεται με φρυγανισμένο ψωμί \n-Poached eggs over herb yogurt with chili oil \n*Served with a side of bread",
       "price": "9"
@@ -95,7 +95,7 @@
       "price": "10"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "BRUSCHETTA",
       "description": "-Προζυμένιο ψωμί με χούμους λιαστής τομάτας, μανιτάρια, τραγανό κρεμμύδι και dukkah (μείγμα μπαχαρικών) *Συνοδεύεται με σαλάτα\n-Sourdough bread with sun-dried tomato hummus, mushrooms, crispy onion and dukkah (spice mix)",
       "price": "9"
