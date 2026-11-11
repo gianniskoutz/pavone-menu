@@ -39,13 +39,13 @@
       "price": "10"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "SCRAMBLED EGGS",
       "description": "-Ψωμί brioche με scrambled eggs, απάκι κοτόπουλο, chutney πιπεριάς φλωρίνης και τραγανό κρεμμύδι\n*Συνοδεύεται από σαλάτα\n-Brioche with scrambled eggs, smoked chicken, sweet red pepper chutney and crispy onion \n*Served with a side of salad",
       "price": "10"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "FRITATA",
       "description": "-Ομελέτα με τηγανητές πατάτες, φέτα, ντοματίνια, ελιές και ρίγανη\n-Omelette with french fries, feta, cherry tomatoes, olives and oregano ",
       "price": "9"
@@ -79,6 +79,12 @@
       "title": "PANCAKES ",
       "description": "-Pancakes με παναρισμένο κοτόπουλο, μπέικον, σως τσένταρ, παρμεζάνα και τηγανητό αυγό\n-Pancakes with fried chicken, bacon, cheddar sauce and parmesan cheese topped with a fried egg",
       "price": "12"
+    },
+    {
+      "hidden": true,
+      "price": "9",
+      "description": "-Προζυμένιο ψωμί με κρεμώδες αβοκάντο, τραγανό μπέικον, φέτα, ντοματίνια και δύο αυγά μάτια \n\n-Sourdough bread with creamy smashed avocado, crispy bacon, crumbled feta, cherry tomatoes and two fried eggs",
+      "title": "Αυγά τηγανητά "
     }
   ],
   "savory_options": [
@@ -115,7 +121,7 @@
       "price": "10"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "CROISSANT PISTACHE",
       "description": "-Κρουασάν βουτύρου με βελούδινη κρέμα patisserie, πραλίνα φυστικιού, crumble αμυγδάλου και παγωτό βανίλια \n-Butter croissant with patisserie cream, pistachio praline, almond crumble and vanilla ice cream",
       "price": "9.5"
