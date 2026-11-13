@@ -36,6 +36,12 @@
       "title": "PORK BELLY KUSHIYAKI",
       "price": "12",
       "description": "-Σουβλάκια πανσέτας στη σχάρα με ιαπωνικό γλάσο tare, chimichurri, μαγιονέζα και αγγούρι τουρσί\n-Grilled pork belly skewers with Japanese tare glaze, chimichurri, mayo and pickled cucumber "
+    },
+    {
+      "hidden": true,
+      "title": "THE OG",
+      "description": "-Με αφράτο ψωμάκι πατάτας, smash μοσχαρισιο μπιφτέκι, cheddar, πίκλες αγγουριού, λευκό κρεμμύδι και σπιτική sauce burger - Potato bun, smash beef, cheddar, pickles, white onion and signature house burger sauce",
+      "price": "6,5 "
     }
   ]
 }
