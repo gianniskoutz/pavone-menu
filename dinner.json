@@ -2,43 +2,43 @@
   "coming_soon": false,
   "items": [
     {
-      "hidden": true,
+      "hidden": false,
       "title": "CRISPY CHICKEN CEASAR",
       "description": "- Τραγανό κοτόπουλο, μαρούλι iceberg,μαγιονέζα με σκόρδο & παρμεζάνα, τραγανά κρουτόν και παρμεζάνα - Crispy chicken, iceberg lettuce, homemade Parmesan Garlic mayo, crunchy croutons and Parmesan ",
       "price": "7,5"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "BBQ LOADED FRIES",
       "description": "Τραγανές πατάτες τηγανητές, pulled pork BBQ ( σιγοψημένο χοιρινό σε ίνες με σάλτσα BBQ), σάλτσα Τζεντάι, τραγανό κρεμμύδι, σχοινόπρασο και καπνιστή μαγιονέζα - Crispy fries, BBQ pulled pork, cheddar sauce, crispy onions, chives and smoky mayo",
       "price": "7,5"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "THE OG ",
       "description": "- Με αφράτο ψωμάκι πατάτας, smash μοσχαρίσιο μπιφτέκι, τσενταρ, πικλες, λευκό κρεμμύδι και σπιτική sauce burger - Potato bun, smash beef, cheddar, pickles, white onion and signature house burger sauce",
       "price": "6,5"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "GREEK FREAK",
       "description": "- Με αφράτο ψωμάκι πατάτας, χοιρινή πανσέτα, τσενταρ, iceberg, ντομάτα, αγγουράκι τουρσί με άνηθο, τραγανό κρεμμύδι και μαγιονέζα με γεύση τζατζίκι - Potato bun, pork belly, cheddar, iceberg lettuce, tomato, dill cucumber pickles, crispy onion and tzatziki mayo",
       "price": "8,5"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "DIRTY SMOKE",
       "description": "- Με αφράτο ψωμάκι πατάτας, διπλό smash μοσχαρίσιο μπιφτέκι, τραγανό μπέικον, καπνιστή BBQ sauce, μαγιονέζα με μαύρο πιπέρι και πικλες αγγουριού - Potato bun, double smash beef, crispy bacon, dark smoke BBQ sauce, black pepper mayo and pickles",
       "price": "10,5"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "CRUNCHY THEORY",
       "description": "- Με αφράτο ψωμάκι πατάτας, τραγανό κοτόπουλο, μαγιονέζα με σκόρδο & παρμεζάνα, iceberg, ντομάτα και πικλες κρεμμυδιού - Potato bun, crispy chicken, Parmesan garlic mayo, iceberg lettuce, tomato and pickled red onion",
       "price": "8"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "SWEET REVENGE ",
       "description": "- Με αφράτο ψωμάκι πατάτας, τραγανό κοτόπουλο με γλάσου μελιού ελαφρώς πικάντικο, μαγιονέζα με gochujang και σουσάμι, Asian slaw και πικλες αγγουριού  - Potato bun, crispy chicken with spicy honey glaze, gochujang sesame mayo, Asian slaw and pickles",
       "price": "9"
