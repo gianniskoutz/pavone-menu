@@ -1,47 +1,4 @@
 {
   "coming_soon": true,
-  "items": [
-    {
-      "hidden": true,
-      "title": "NACHOS",
-      "description": "-Τραγανά nachos με κιμά τσίλι κον κάρνε και γουακαμόλε \n- Crispy nachos with chilli con carne ground beef and guacamole",
-      "price": "11"
-    },
-    {
-      "hidden": true,
-      "title": "PATATAS BRAVAS ",
-      "price": "9.5.",
-      "description": "-Τραγανές πατάτες με σάλτσα brava με miso και aioli ψητού σκόρδου \n-Crispy potatoes with miso brava sauce and roasted garlic aioli"
-    },
-    {
-      "hidden": true,
-      "title": "SMASH BEEF TACOS",
-      "price": "11",
-      "description": "-Τάκος με smashed μοσχάρι με καπνιστές νότες, τσένταρ, μαγιονέζα gochujang, iceberg, ντομάτα και jalapeno\n-Smash beef tacos with smoky seasoning, cheddar,gochujang mayo, iceberg lettuce, tomato and jalapeno"
-    },
-    {
-      "hidden": true,
-      "title": "BURRATA FOCACCIA",
-      "price": "12.5",
-      "description": "-Φοκάτσια με μπουράτα, ντοματίνια confit, ρόκα, πίκλα κρεμμυδιού, κρέμα βαλσάμικου και μέλι με σκόρδο\n-Focaccia with burrata, cofit cherry tomatoes, rocket, pickled onion, balsamic glaze and garlic honey  "
-    },
-    {
-      "hidden": true,
-      "title": "PULLED PORK CRISPY RICE ",
-      "price": "13.5",
-      "description": "-Τραγανό ρύζι σούσι με σιγομαγειρεμένο pulled pork, καπνιστή μαγιονέζα, πίκλα πράσινου μήλου και jalapeno, τραγανό κρεμμύδι και σχινόπρασο\n-Crispy sushi rice topped with pulled pork, smoky mayo, green apple and jalapeno pickle, crispy onion and chives"
-    },
-    {
-      "hidden": true,
-      "title": "PORK BELLY KUSHIYAKI",
-      "price": "12",
-      "description": "-Σουβλάκια πανσέτας στη σχάρα με ιαπωνικό γλάσο tare, chimichurri, μαγιονέζα και αγγούρι τουρσί\n-Grilled pork belly skewers with Japanese tare glaze, chimichurri, mayo and pickled cucumber "
-    },
-    {
-      "hidden": true,
-      "title": "THE OG",
-      "description": "-Με αφράτο ψωμάκι πατάτας, smash μοσχαρισιο μπιφτέκι, cheddar, πίκλες αγγουριού, λευκό κρεμμύδι και σπιτική sauce burger - Potato bun, smash beef, cheddar, pickles, white onion and signature house burger sauce",
-      "price": "6,5 "
-    }
-  ]
+  "items": []
 }
