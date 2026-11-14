@@ -30,6 +30,12 @@
       "title": "DIRTY SMOKE",
       "description": "- Με αφράτο ψωμάκι πατάτας, διπλό smash μοσχαρίσιο μπιφτέκι, τραγανό μπέικον, καπνιστή BBQ sauce, μαγιονέζα με μαύρο πιπέρι και πικλες αγγουριού - Potato bun, double smash beef, crispy bacon, dark smoke BBQ sauce, black pepper mayo and pickles",
       "price": "10,5"
+    },
+    {
+      "hidden": true,
+      "title": "CRUNCHY THEORY",
+      "description": "- Με αφράτο ψωμάκι πατάτας, τραγανό κοτόπουλο, μαγιονέζα με σκόρδο & παρμεζάνα, iceberg, ντομάτα και πικλες κρεμμυδιού - Potato bun, crispy chicken, Parmesan garlic mayo, iceberg lettuce, tomato and pickled red onion",
+      "price": "7,8"
     }
   ]
 }
