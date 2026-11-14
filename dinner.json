@@ -1,4 +1,11 @@
 {
   "coming_soon": true,
-  "items": []
+  "items": [
+    {
+      "hidden": true,
+      "title": "CRISPY CHICKEN CEASAR",
+      "description": "- Τραγανό κοτόπουλο, μαρούλι iceberg,μαγιονέζα με σκόρδο & παρμεζάνα, τραγανά κρουτόν και παρμεζάνα - Crispy chicken, iceberg lettuce, homemade Parmesan Garlic mayo, crunchy croutons and Parmesan ",
+      "price": "7,5"
+    }
+  ]
 }
