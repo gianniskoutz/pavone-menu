@@ -24,6 +24,12 @@
       "title": "GREEK FREAK",
       "description": "- Με αφράτο ψωμάκι πατάτας, χοιρινή πανσέτα, τσενταρ, iceberg, ντομάτα, αγγουράκι τουρσί με άνηθο, τραγανό κρεμμύδι και μαγιονέζα με γεύση τζατζίκι - Potato bun, pork belly, cheddar, iceberg lettuce, tomato, dill cucumber pickles, crispy onion and tzatziki mayo",
       "price": "8,5"
+    },
+    {
+      "hidden": true,
+      "title": "DIRTY SMOKE",
+      "description": "- Με αφράτο ψωμάκι πατάτας, διπλό smash μοσχαρίσιο μπιφτέκι, τραγανό μπέικον, καπνιστή BBQ sauce, μαγιονέζα με μαύρο πιπέρι και πικλες αγγουριού - Potato bun, double smash beef, crispy bacon, dark smoke BBQ sauce, black pepper mayo and pickles",
+      "price": "10,5"
     }
   ]
 }
