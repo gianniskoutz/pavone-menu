@@ -33,13 +33,13 @@
       "price": "13"
     },
     {
-      "hidden": false,
+      "hidden": true,
       "title": "BREAKFAST TACOS ",
       "description": "-Τορτίγιες με αυγά scrambled, ντοματίνια, αβοκάντο και καπνιστό σολομό\n-Soft shell tortillas with scrambled eggs, cherry tomatoes, avocado and smoked salmon ",
       "price": "10"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "title": "SCRAMBLED EGGS",
       "description": "-Ψωμί brioche με scrambled eggs, απάκι κοτόπουλο, chutney πιπεριάς φλωρίνης και τραγανό κρεμμύδι\n*Συνοδεύεται από σαλάτα\n-Brioche with scrambled eggs, smoked chicken, sweet red pepper chutney and crispy onion \n*Served with a side of salad",
       "price": "10"
@@ -81,7 +81,7 @@
       "price": "12"
     },
     {
-      "hidden": true,
+      "hidden": false,
       "price": "9",
       "description": "-Προζυμένιο ψωμί με κρεμώδες αβοκάντο, τραγανό μπέικον, φέτα, ντοματίνια και δύο αυγά μάτια \n\n-Sourdough bread with creamy smashed avocado, crispy bacon, crumbled feta, cherry tomatoes and two fried eggs",
       "title": "THE GREEN TOAST"
